@@ -1,5 +1,7 @@
 # pr-release
 
+> 🚨 This repo does nothing right now, I'm just experimenting.  Do not use this.
+
 ## Quick Start
 
 ```bash
