@@ -5,34 +5,10 @@
 ## Quick Start
 
 ```bash
-# Generate artifacts based on format of PR
-# and output suggested as files to given path
-npx pr-release plan -o ./.pr-release
-
-tree ./.pr-release
-
-.pr-release
-├── changelog
-│    ├── changelog.md               # complete changelog file
-│    ├── entry.md                   # latest changelog entry
-│    ├── bugs.md                    # bugs section
-│    ├── enhancements.md            # enhancements section           
-│    ├── breaking-changes.md        # breaking changes section
-│    └── migration-guide.md         # migration guide for breaking changes
-│
-├── contributors.md                 # markdown list of contributors
-├── commit.txt                      # Suggested commit message
-├── version.txt                     # Suggested semver version
-└── data.json                       # Contains all information in other files as structured json
+# Generate a PR representing a release
+npx pr-release pr --source next --target main
 ```
 
-
-```bash
-npx pr-release plan                 # Outputs to stdout changes that will be made
-npx pr-release apply                # Creates a release
-
-npm publish                         # Optionally publish to npm / etc
-```
 
 ## What is it?
 
@@ -62,33 +38,16 @@ The following labels will change how `pr-release` generates a release:
 
 The PR description will also have generated markdown sections.  `pr-release` will use these sections to generate the changelog and other metadata.
 
-## Advanced customization
-
-`pr-release` is designed to be as simple to use for the common case.  If you do not want to have `pr-release` manage everything you can
-instead use it as a utility to generate release metadata and files that you can then assemble yourself.
-
-This helps keep the common case easy and configuration free.  And the more advanced use cases still get the full power but just need
-to string some commands together in CI.
-
-E.g. instead of using `pr-release` apply to generate a commit, you can use `git commit -m "${pr-release show commit}"` and add any other changes to the commit you like there.
-
-Same goes for the changelog.  You can let pr-release generate and manage the changelog.  Or instead, you can pluck specifiy entries via `pr-release show changelog <entry>` or by dumping all metadata to an output directory via `pr-release plan -o <dir>`.
-
 
 ## API
 
-### `plan`
+### `pr`
 
-### `apply`
+Generates or updates a release pull request representing the pending release.
 
-### `show version`
+Any branches merged targeting the `--source` branch will be included in the release notes and changelog.
 
-Outputs the version `pr-release` thinks the upcoming release should be.
+All labels on all incoming branches will be aggregated in the release pr labels.  E.g. if you have a `bug` branch, an `ops` branch, a `security` branch etc the release PR will include all those labels.
 
-### `show contributors`  
+You can edit the PR and as long as you don't mess with some hidden anchor tags in the description `pr-release` will update around your changes.
 
-Outputs the contributor `pr-release` thinks contributed to this release
-
-### `show commit`  
-
-Outputs a suggested commit message based on the PR title and version
