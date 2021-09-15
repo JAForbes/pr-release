@@ -54,12 +54,11 @@ Upon merging, `pr-release` will create a github release, changelog and prepare f
 
 Mostly by using native github features like labels, the PR description and title and not much else.
 
-E.g. `pr-release` will generate namespaced labels that can be used to control pr-release's behaviour.  Such as:
+The following labels will change how `pr-release` generates a release:
 
-- `pr-release:major`   Signals a feature branch causes breaking changes
-- `pr-release:minor`   Signals a feature branch causes minor changes
-- `pr-release:patch`   Signals a feature branch is a safe patch upgrade
-- `pr-release:skip`    Signals a release candidate should skip all `pr-release` automation
+- `major`   Signals a feature branch causes breaking changes
+- `minor`   Signals a feature branch causes minor changes
+- `patch`   Signals a feature branch is a safe patch upgrade
 
 The PR description will also have generated markdown sections.  `pr-release` will use these sections to generate the changelog and other metadata.
 
