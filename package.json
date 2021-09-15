@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/JAForbes/pr-release#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
