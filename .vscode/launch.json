@@ -7,11 +7,21 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "pr",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "args": ["pr"],
+            "program": "${workspaceFolder}/lib/index.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "merge --commit",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["merge", "--commit"],
             "program": "${workspaceFolder}/lib/index.js"
         }
     ]

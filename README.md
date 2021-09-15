@@ -5,33 +5,8 @@
 ## Quick Start
 
 ```bash
-# Generate artifacts based on format of PR
-# and output suggested as files to given path
-npx pr-release plan -o ./.pr-release
-
-tree ./.pr-release
-
-.pr-release
-├── changelog
-│    ├── changelog.md               # complete changelog file
-│    ├── entry.md                   # latest changelog entry
-│    ├── bugs.md                    # bugs section
-│    ├── enhancements.md            # enhancements section           
-│    ├── breaking-changes.md        # breaking changes section
-│    └── migration-guide.md         # migration guide for breaking changes
-│
-├── contributors.md                 # markdown list of contributors
-├── commit.txt                      # Suggested commit message
-├── version.txt                     # Suggested semver version
-└── data.json                       # Contains all information in other files as structured json
-```
-
-
-```bash
-npx pr-release plan                 # Outputs to stdout changes that will be made
-npx pr-release apply                # Creates a release
-
-npm publish                         # Optionally publish to npm / etc
+# Generate a PR representing a release
+npx pr-release pr --source next --target main
 ```
 
 ## What is it?
@@ -62,33 +37,70 @@ The following labels will change how `pr-release` generates a release:
 
 The PR description will also have generated markdown sections.  `pr-release` will use these sections to generate the changelog and other metadata.
 
-## Advanced customization
+## FAQ
 
-`pr-release` is designed to be as simple to use for the common case.  If you do not want to have `pr-release` manage everything you can
-instead use it as a utility to generate release metadata and files that you can then assemble yourself.
+### How do I update package.json to include the version
 
-This helps keep the common case easy and configuration free.  And the more advanced use cases still get the full power but just need
-to string some commands together in CI.
+When running `pr-release merge` pass along `--commit`.  If you have a `package.json` `pr-release` will automatically update the version in that file to match the release version.
 
-E.g. instead of using `pr-release` apply to generate a commit, you can use `git commit -m "${pr-release show commit}"` and add any other changes to the commit you like there.
+Note `--commit` will also commit all other changes in the working directory via the Github API.  This allows you to run custom build steps to e.g. build documentation and have them included on the target branch but not the source branch.
 
-Same goes for the changelog.  You can let pr-release generate and manage the changelog.  Or instead, you can pluck specifiy entries via `pr-release show changelog <entry>` or by dumping all metadata to an output directory via `pr-release plan -o <dir>`.
+And this works with protected branches enabled.
 
+### How do I publish to npm
+
+After running `pr-release merge --commit` run `npm publish`.  `npm` will use the `version` in package.json.
+
+### What environment variables do I need to make this work?
+
+Ironically, `pr-release` uses as much config available in the environment as possible to provide the best possible zero config experience for CI.
+
+You should be able to run `npx pr-release all` and `pr-release` will infer intent from context in the environment variables.
+
+If you are running `pr-release` within Github Actions, you do not need to configure environment variables at all because we only use variables that Github provides out of the box.
+But, if you are running `pr-release` locally or in some other context, you will need to provide the following:
+
+
+```.env
+GITHUB_TOKEN="..."
+GITHUB_REPOSITORY="..."
+GITHUB_SHA="..."
+GITHUB_REF="..."
+```
+
+`GITHUB_TOKEN` is necessary for pr-release to do any of the work it does.  By design `pr-release` never uses `git` to make changes to the repo.  This is so `pr-release` can operate outside of the normal branch protection rules provided by github, and to give you the best possible auditing experience.
+
+If `GITHUB_REPOSITORY` is not provided, pr-release will exit.  Even if you are running locally in a `.git` context, we will never sniff the `git remote -v`.  By making repository selection explicit, it is possible for forks to to still target the correct repository, or to have management repositories that manage releases across an entire company.
+
+If `GITHUB_SHA` is not specified, `pr-release` will make an API call to identify the relevant sha for the given command.  If the relevant sha is not inferrable, `pr-release` will exit with a non zero code. 
+
+### How do I do concurrent release channels?
+
+Have a target branch for each channel e.g. `v1` and a release candidate branch like `v1-next`:
+
+```
+# Generate/update a release PR for v1 channel
+npx pr-release pr --source v1-next --target v1
+
+# Generate/update a release PR for v2 channel
+npx pr-release pr --source v2-next --target v2
+```
+
+### How do I opt out of `pr-release` for some changes.
+
+Just add the label `prr:skip` to the generated release PR and pr-release will no longer update that PR.
+
+For repeated/systemic opt-out consider using conditionals in your github workflow.
 
 ## API
 
-### `plan`
+### `pr`
 
-### `apply`
+Generates or updates a release pull request representing the pending release.
 
-### `show version`
+Any branches merged targeting the `--source` branch will be included in the release notes and changelog.
 
-Outputs the version `pr-release` thinks the upcoming release should be.
+All labels on all incoming branches will be aggregated in the release pr labels.  E.g. if you have a `bug` branch, an `ops` branch, a `security` branch etc the release PR will include all those labels.
 
-### `show contributors`  
+You can edit the PR and as long as you don't mess with some hidden anchor tags in the description `pr-release` will update around your changes.
 
-Outputs the contributor `pr-release` thinks contributed to this release
-
-### `show commit`  
-
-Outputs a suggested commit message based on the PR title and version
