@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  pr:
+  merge:
 
     runs-on: ubuntu-latest
 
