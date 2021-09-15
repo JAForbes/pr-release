@@ -1,0 +1,42 @@
+{
+  "name": "pr-release",
+  "version": "0.0.6",
+  "description": "Generate releases from pull request descriptions.",
+  "main": "dist/pr-release.cjs",
+  "module": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "bin": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAForbes/pr-release.git"
+  },
+  "keywords": [
+    "release",
+    "automation",
+    "github"
+  ],
+  "files": [
+    "lib/*",
+    "dist/*"
+  ],
+  "author": "JAForbes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JAForbes/pr-release/issues"
+  },
+  "homepage": "https://github.com/JAForbes/pr-release#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "rollup": "^2.56.3"
+  },
+  "dependencies": {
+    "octokit": "^1.5.0",
+    "semver": "^7.3.5",
+    "zx": "^4.2.0"
+  }
+}
