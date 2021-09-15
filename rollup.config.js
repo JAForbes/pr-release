@@ -4,7 +4,7 @@ export default {
     ,plugins: [
         resolve()
     ]
-    ,external: ['zx']
+    ,external: ['zx', 'octokit']
     ,output: {
         file: './dist/pr-release.cjs'
         ,format: 'cjs'
