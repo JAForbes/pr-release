@@ -1,8 +1,11 @@
 import resolve from '@rollup/plugin-node-resolve'
+import common from '@rollup/plugin-commonjs'
+
 export default {
     input: './lib/index.js'
     ,plugins: [
-        resolve()
+        resolve(),
+        common()
     ]
     ,external: ['zx', 'octokit']
     ,output: {
