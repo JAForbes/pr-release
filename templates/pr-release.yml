@@ -26,4 +26,3 @@ jobs:
     - run: node lib/index.js pr --verbose --target $target --source $source
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
