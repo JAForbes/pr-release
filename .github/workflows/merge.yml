@@ -4,6 +4,8 @@ on:
   push:
     branches: [ main ]
 
+  workflow_dispatch:
+
 jobs:
   merge:
 
@@ -25,7 +27,7 @@ jobs:
     - run: node lib/index.js changelog --target main --source next
     - run: node lib/index.js merge --target main --source next --commit
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       name: Setup NPM Auth
