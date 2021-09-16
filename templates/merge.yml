@@ -26,3 +26,11 @@ jobs:
     - run: node lib/index.js merge --verbose --target $target --source $source
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Uncomment to publish to npm
+    # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+    #   name: Setup NPM Auth
+    #   env:
+    #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    # - run: npm publish
+    #   name: Publish

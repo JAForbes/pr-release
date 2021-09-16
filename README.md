@@ -39,6 +39,12 @@ The PR description will also have generated markdown sections.  `pr-release` wil
 
 ## FAQ
 
+### How do I configure my Github actions to use `pr-release`?
+
+Simply run `npx pr-release actions-yml`.  It will generate all the yml files you need to use all the features of `pr-release`.
+
+From there you can edit the generated files to tailor specific behavior as required.
+
 ### How do I update package.json to include the version
 
 When running `pr-release merge` pass along `--commit`.  If you have a `package.json` `pr-release` will automatically update the version in that file to match the release version.
@@ -50,6 +56,8 @@ And this works with protected branches enabled.
 ### How do I publish to npm
 
 After running `pr-release merge --commit` run `npm publish`.  `npm` will use the `version` in package.json.
+
+Note, you must have an `NPM_TOKEN` available in CI.  You can generate an NPM Token by following [these instructions](https://docs.npmjs.com/cli/v7/commands/npm-token).  You'll need to then follow [these instructions](https://docs.github.com/en/actions/reference/encrypted-secrets) to add the secret to your Github Actions workflows.
 
 ### What environment variables do I need to make this work?
 
