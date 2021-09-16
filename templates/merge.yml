@@ -4,6 +4,8 @@ on:
   push:
     branches: [ $target ]
 
+  workflow_dispatch:
+
 jobs:
   merge:
 
@@ -25,7 +27,7 @@ jobs:
     - run: node lib/index.js changelog --target $target --source $source
     - run: node lib/index.js merge --target $target --source $source --commit
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     # Uncomment to publish to npm
     # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
