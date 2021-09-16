@@ -23,7 +23,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: node lib/index.js changelog --target $target --source $source
-    - run: node lib/index.js merge --target $target --source $source
+    - run: node lib/index.js merge --target $target --source $source --commit
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
