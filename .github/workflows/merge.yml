@@ -1,4 +1,4 @@
-name: pr-release
+name: merge
 
 on:
   push:
