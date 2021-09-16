@@ -63,8 +63,6 @@ Note, you must have an `NPM_TOKEN` available in CI.  You can generate an NPM Tok
 
 Ironically, `pr-release` uses as much config available in the environment as possible to provide the best possible zero config experience for CI.
 
-You should be able to run `npx pr-release all` and `pr-release` will infer intent from context in the environment variables.
-
 If you are running `pr-release` within Github Actions, you do not need to configure environment variables at all because we only use variables that Github provides out of the box.
 But, if you are running `pr-release` locally or in some other context, you will need to provide the following:
 

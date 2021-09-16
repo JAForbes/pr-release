@@ -17,6 +17,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "extract-changelog",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["extract-changelog", "--out"],
+            "program": "${workspaceFolder}/lib/index.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "merge --commit",
             "skipFiles": [
                 "<node_internals>/**"
