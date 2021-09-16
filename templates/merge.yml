@@ -28,7 +28,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Uncomment to publish to npm
-    # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+    # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
     #   name: Setup NPM Auth
     #   env:
     #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
