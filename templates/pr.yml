@@ -3,6 +3,8 @@ name: pr
 on:
   push:
     branches: [ $source ]
+    
+  workflow_dispatch:
 
 jobs:
   pr:
@@ -25,4 +27,4 @@ jobs:
     # todo-james replace with npx pr-release pr
     - run: node lib/index.js pr --verbose --target $target --source $source
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
