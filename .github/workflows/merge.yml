@@ -24,7 +24,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: node lib/index.js changelog --target main --source next
+    - run: node lib/index.js changelog --target main --source next --out changelog.md
     - run: node lib/index.js merge --target main --source next --commit
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
