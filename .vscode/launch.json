@@ -7,6 +7,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "recreateSourceBranch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["recreateSourceBranch"],
+            "program": "${workspaceFolder}/lib/index.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "pr",
             "skipFiles": [
                 "<node_internals>/**"
