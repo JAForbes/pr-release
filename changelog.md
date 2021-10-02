@@ -1,4 +1,22 @@
 
+# Release v0.4.17
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Fix git diff exit code (@JAForbes)](https://github.com/JAForbes/pr-release/pull/84)
+
 # Release v0.4.11
 
 Thank you to the following contributors for helping make **pr-release** better:
