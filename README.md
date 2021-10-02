@@ -92,21 +92,44 @@ npx pr-release pr --source v1-next --target v1
 npx pr-release pr --source v2-next --target v2
 ```
 
-### How do I opt out of `pr-release` for some changes.
-
-Just add the label `prr:skip` to the generated release PR and pr-release will no longer update that PR.
-
-For repeated/systemic opt-out consider using conditionals in your github workflow.
-
 ## API
 
-### `pr`
+```
+pr-release 
 
-Generates or updates a release pull request representing the pending release.
+pr-release subcommand --options
 
-Any branches merged targeting the `--source` branch will be included in the release notes and changelog.
+subcommands:
 
-All labels on all incoming branches will be aggregated in the release pr labels.  E.g. if you have a `bug` branch, an `ops` branch, a `security` branch etc the release PR will include all those labels.
+  global flags
 
-You can edit the PR and as long as you don't mess with some hidden anchor tags in the description `pr-release` will update around your changes.
+    --source <branch>
 
+                        (default=next) Specify the branch that is considered the staging branch.
+
+    --target <branch>
+
+                        (default=main) Specify the branch that is considered the production branch.
+
+  pr
+
+                        Updates or creates the release PR.  Should run on every relevant merge event.
+
+  merge
+
+                        Commits updated changelog and creates new npm/github/etc release.
+                        Should run on every relevant merge event.
+
+    --refresh
+    --refresh-clean
+
+                        Recreate the source branch from the current target branch ref.
+                        Automatically migrates open PRs, and updates the default branch on the repository.
+
+                        --refresh-clean will also delete the old source branch while --refresh
+                        will simply rename it as <source>-archive-<timestamp>
+
+  actions-yml
+
+                        Scaffold Github actions yml files
+```
