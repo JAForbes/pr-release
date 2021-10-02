@@ -1,4 +1,24 @@
 
+# Release v0.4.19
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Update docs (@JAForbes)](https://github.com/JAForbes/pr-release/pull/88)
+
+Should have removed them in the last release.
+
 # Release v0.4.18
 
 Thank you to the following contributors for helping make **pr-release** better:
