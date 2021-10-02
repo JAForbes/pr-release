@@ -120,8 +120,10 @@ subcommands:
                         Commits updated changelog and creates new npm/github/etc release.
                         Should run on every relevant merge event.
 
-  actions-yml
+  feature-pr
 
-                        Scaffold Github actions yml files
+                        Generate a feature-pr for the current branch that targets
+                        the source branch if the push event is not for the target
+                        or source branch.
 ```
 
