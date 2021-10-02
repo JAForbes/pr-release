@@ -27,6 +27,8 @@ jobs:
     - run: node bin.js changelog --target main --source next --out changelog.md --verbose
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    - run: ls
+    - run: git diff
     - run: node bin.js merge --target main --source next --commit --verbose --refresh-clean
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
