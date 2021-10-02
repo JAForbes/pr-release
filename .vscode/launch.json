@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "args": ["recreateSourceBranch"],
-            "program": "${workspaceFolder}/lib/index.js"
+            "program": "${workspaceFolder}/bin.js"
         },
         {
             "type": "pwa-node",
@@ -22,7 +22,7 @@
                 "<node_internals>/**"
             ],
             "args": ["pr"],
-            "program": "${workspaceFolder}/lib/index.js"
+            "program": "${workspaceFolder}/bin.js"
         },
         {
             "type": "pwa-node",
@@ -32,7 +32,7 @@
                 "<node_internals>/**"
             ],
             "args": ["changelog"],
-            "program": "${workspaceFolder}/lib/index.js"
+            "program": "${workspaceFolder}/bin.js"
         },
         {
             "type": "pwa-node",
@@ -42,7 +42,7 @@
                 "<node_internals>/**"
             ],
             "args": ["extract-changelog", "--out"],
-            "program": "${workspaceFolder}/lib/index.js"
+            "program": "${workspaceFolder}/bin.js"
         },
         {
             "type": "pwa-node",
@@ -52,7 +52,7 @@
                 "<node_internals>/**"
             ],
             "args": ["merge", "--commit"],
-            "program": "${workspaceFolder}/lib/index.js"
+            "program": "${workspaceFolder}/bin.js"
         },
         {
             "type": "pwa-node",
@@ -62,7 +62,7 @@
                 "<node_internals>/**"
             ],
             "args": ["actions-yml"],
-            "program": "${workspaceFolder}/lib/index.js"
+            "program": "${workspaceFolder}/bin.js"
         }
     ]
 }
