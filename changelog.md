@@ -1,4 +1,27 @@
 
+# Release v0.5.0
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+#### [Automatically create feature branch PR (@JAForbes)](https://github.com/JAForbes/pr-release/pull/91)
+
+Encourage developers to open draft pull requests as early as possible by automatically creating a draft pull request on push.
+
+### Patches
+
+#### [Remove prefix from GITHUB_REF when generating feature PR (@JAForbes)](https://github.com/JAForbes/pr-release/pull/94)
+
+Was causing feature PR creation to run on main/next.
+#### [Make feature-pr command accessible (@JAForbes)](https://github.com/JAForbes/pr-release/pull/92)
+
 # Release v0.4.19
 
 Thank you to the following contributors for helping make **pr-release** better:
