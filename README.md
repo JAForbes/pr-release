@@ -118,15 +118,6 @@ subcommands:
                         Commits updated changelog and creates new npm/github/etc release.
                         Should run on every relevant merge event.
 
-    --refresh
-    --refresh-clean
-
-                        Recreate the source branch from the current target branch ref.
-                        Automatically migrates open PRs, and updates the default branch on the repository.
-
-                        --refresh-clean will also delete the old source branch while --refresh
-                        will simply rename it as <source>-archive-<timestamp>
-
   actions-yml
 
                         Scaffold Github actions yml files
