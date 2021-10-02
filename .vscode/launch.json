@@ -61,7 +61,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "args": ["featurePR"],
+            "args": ["feature-pr"],
             "program": "${workspaceFolder}/bin.js"
         },
         {
