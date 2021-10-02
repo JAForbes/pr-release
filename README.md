@@ -120,7 +120,7 @@ subcommands:
                         Commits updated changelog and creates new npm/github/etc release.
                         Should run on every relevant merge event.
 
-    --refresh 
+    --refresh
     --refresh-clean
 
                         Recreate the source branch from the current target branch ref.
