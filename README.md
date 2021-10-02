@@ -78,6 +78,8 @@ If `GITHUB_REPOSITORY` is not provided, pr-release will exit.  Even if you are r
 
 If `GITHUB_SHA` is not specified, `pr-release` will make an API call to identify the relevant sha for the given command.  If the relevant sha is not inferrable, `pr-release` will exit with a non zero code. 
 
+`GITHUB_REF` is used to identify if there is already a pull request for the current branch.  This is especially useful for automatically generating feature branches on push.
+
 ### How do I do concurrent release channels?
 
 Have a target branch for each channel e.g. `v1` and a release candidate branch like `v1-next`:
