@@ -61,9 +61,7 @@ Note, you must have an `NPM_TOKEN` available in CI.  You can generate an NPM Tok
 
 ### What environment variables do I need to make this work?
 
-Ironically, `pr-release` uses as much config available in the environment as possible to provide the best possible zero config experience for CI.
-
-If you are running `pr-release` within Github Actions, you do not need to configure environment variables at all because we only use variables that Github provides out of the box.
+If you are running `pr-release` within Github Actions, you do not need to configure environment variables except `GITHUB_TOKEN` because we use variables that Github provides out of the box.
 But, if you are running `pr-release` locally or in some other context, you will need to provide the following:
 
 
@@ -74,7 +72,7 @@ GITHUB_SHA="..."
 GITHUB_REF="..."
 ```
 
-`GITHUB_TOKEN` is necessary for pr-release to do any of the work it does.  By design `pr-release` never uses `git` to make changes to the repo.  This is so `pr-release` can operate outside of the normal branch protection rules provided by github, and to give you the best possible auditing experience.
+`GITHUB_TOKEN` is necessary for pr-release to do any of the work it does.  By design `pr-release` never uses `git` to make changes to the repo.  This is so `pr-release` can operate outside of the normal branch protection rules provided by github, and to give you the best possible auditing experience.  We do not use the default token provided by github actions because it will be restricted to branch protection rules.  You will need to generate a token of an admin account on your repository so that pr-release can generate release artifacts on the main protected branch.
 
 If `GITHUB_REPOSITORY` is not provided, pr-release will exit.  Even if you are running locally in a `.git` context, we will never sniff the `git remote -v`.  By making repository selection explicit, it is possible for forks to to still target the correct repository, or to have management repositories that manage releases across an entire company.
 

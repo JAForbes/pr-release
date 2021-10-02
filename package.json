@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rollup -c"
   },
-  "bin": "lib/index.js",
+  "bin": "bin.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JAForbes/pr-release.git"
