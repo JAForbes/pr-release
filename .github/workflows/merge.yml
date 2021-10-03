@@ -17,18 +17,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with: 
+        ref: 'next'
+        fetch-depth: 0
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        ref: 'next'
     - run: npm ci
     - run: npm run build --if-present
     - run: node bin.js changelog --target main --source next --out changelog.md
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-    - run: node bin.js merge --target main --source next --commit
+    - run: node bin.js merge --target main --source next --commit --verbose --force
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
