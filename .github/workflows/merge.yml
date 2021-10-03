@@ -22,6 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        ref: 'next'
     - run: npm ci
     - run: npm run build --if-present
     - run: node bin.js changelog --target main --source next --out changelog.md

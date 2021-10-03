@@ -120,6 +120,23 @@ subcommands:
                         Commits updated changelog and creates new npm/github/etc release.
                         Should run on every relevant merge event.
 
+    --force
+
+                        Will repair the target branch if a fast forward update is not possible.  
+                        Otherwise will simply error that the branches have diverged or exit with
+                        code zero if everything is fine.
+
+    --clean
+
+                        By default --force will archive the old target branch under an alias.
+                        Use --clean to remove the archived old target branch once the process has
+                        completed successfully.
+
+
+  actions-yml
+
+                        Scaffold Github actions yml files
+
   feature-pr
 
                         Generate a feature-pr for the current branch that targets
