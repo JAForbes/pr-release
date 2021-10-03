@@ -1,4 +1,24 @@
 
+# Release v0.7.7
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Fake release (@JAForbes)](https://github.com/JAForbes/pr-release/pull/126)
+
+This time we'll do a squash and see if prr automatically recovers.
+
 # Release v0.7.6
 
 Thank you to the following contributors for helping make **pr-release** better:
