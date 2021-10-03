@@ -125,5 +125,25 @@ subcommands:
                         Generate a feature-pr for the current branch that targets
                         the source branch if the push event is not for the target
                         or source branch.
+
+  Advanced Commands
+  -----------------
+
+  repair-target
+
+                        Generate a new target branch from the source sha.  Helpful
+                        if your target branch has a different history to the source
+                        branch (e.g. an accidental squash into target).
+
+    --force
+
+                        Will only repair the target branch with a --force flag.  Otherwise
+                        will simply error that the branches have diverged or exit with
+                        code zero if everything is fine.
+
+    --clean
+
+                        By default will archive the old target branch.  Use --clean
+                        to remove the old target branch.
 ```
 
