@@ -3,6 +3,24 @@
 
 Thank you to the following contributors for helping make **pr-release** better:
 
+
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+No patch changes in this release.
+
+# Release v0.7.4
+
+Thank you to the following contributors for helping make **pr-release** better:
+
 - @JAForbes
 
 ### Major Changes
