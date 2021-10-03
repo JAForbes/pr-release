@@ -1,4 +1,28 @@
 
+# Release v0.5.3
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Stop Github from complaining about empty addLabels call (@JAForbes)](https://github.com/JAForbes/pr-release/pull/99)
+
+
+#### [Update docs to include feature-pr (@JAForbes)](https://github.com/JAForbes/pr-release/pull/96)
+
+
+#### [Make dotenv a prod dependency (@JAForbes)](https://github.com/JAForbes/pr-release/pull/95)
+
 # Release v0.5.0
 
 Thank you to the following contributors for helping make **pr-release** better:
