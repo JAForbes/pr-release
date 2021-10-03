@@ -1,4 +1,24 @@
 
+# Release v0.6.0
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+#### [Recover from diverted history (@JAForbes)](https://github.com/JAForbes/pr-release/pull/102)
+
+
+
+### Patches
+
+No patch changes in this release.
+
 # Release v0.5.3
 
 Thank you to the following contributors for helping make **pr-release** better:
