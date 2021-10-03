@@ -163,5 +163,3 @@ subcommands:
                         By default will archive the old target branch.  Use --clean
                         to remove the old target branch.
 ```
-
-
