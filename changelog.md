@@ -1,4 +1,22 @@
 
+# Release v0.6.1
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Testing release still works with protected branch (@JAForbes)](https://github.com/JAForbes/pr-release/pull/106)
+
 # Release v0.6.0
 
 Thank you to the following contributors for helping make **pr-release** better:
