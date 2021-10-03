@@ -1,4 +1,24 @@
 
+# Release v0.7.4
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Add some debug logs and CI flags (@JAForbes)](https://github.com/JAForbes/pr-release/pull/119)
+
+After debugging actions/checkout all day I realised I was configuring the wrong section of yml 🤦‍♂️.
+
 # Release v0.7.2
 
 Thank you to the following contributors for helping make **pr-release** better:
