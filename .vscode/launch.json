@@ -51,7 +51,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "args": ["merge", "--commit", "--target", "main", "--source", "next", "--verbose", "--refresh-clean"],
+            "args": ["merge", "--commit", "--target", "main", "--source", "next", "--verbose", "--force", "--clean"],
             "program": "${workspaceFolder}/bin.js"
         },
         {
