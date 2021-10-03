@@ -24,6 +24,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
+    - run: git log --oneline origin/next
+    - run: git log --oneline origin/main
     # todo-james replace with npx pr-release pr
     - run: node bin.js pr --verbose --target main --source next
       env:
