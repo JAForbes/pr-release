@@ -7,11 +7,11 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "recreateSourceBranch",
+            "name": "repair-target",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "args": ["recreateSourceBranch"],
+            "args": ["repair-target", "--force"],
             "program": "${workspaceFolder}/bin.js"
         },
         {
