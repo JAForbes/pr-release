@@ -57,6 +57,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "rollback",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["rollback", "--target", "main", "--source", "next", "--verbose", "--ignore", "package*", "--ignore", "changelog.md"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "featurePR",
             "skipFiles": [
                 "<node_internals>/**"
