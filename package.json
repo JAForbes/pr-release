@@ -1,6 +1,6 @@
 {
   "name": "pr-release",
-  "version": "0.7.8",
+  "version": "0.7.9",
   "description": "Generate releases from pull request descriptions.",
   "main": "dist/pr-release.cjs",
   "module": "lib/index.js",
