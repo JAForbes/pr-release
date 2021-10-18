@@ -168,5 +168,3 @@ subcommands:
 ### Rollback test
 
 This is a change I am going to release into production and then rollback.
-
-This is a new sentence I am adding, that I will rollback later.
