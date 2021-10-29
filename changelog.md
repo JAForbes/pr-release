@@ -1,4 +1,22 @@
 
+# Release v0.8.6
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Misconfigured yml template (@JAForbes)](https://github.com/JAForbes/pr-release/pull/155)
+
 # Release v0.8.5
 
 Thank you to the following contributors for helping make **pr-release** better:
