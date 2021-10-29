@@ -163,3 +163,14 @@ subcommands:
                         By default will archive the old target branch.  Use --clean
                         to remove the old target branch.
 ```
+
+
+### Rollback test
+
+This is a change I am going to release into production and then rollback.
+
+This is a new sentence I am adding, that I will rollback later.
+
+### This is another rollback test
+
+I am adding this change, to test that rollbacks in CI work as expected.

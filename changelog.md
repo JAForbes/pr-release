@@ -1,4 +1,103 @@
 
+# Release v0.8.1
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [CI Rollback Test (@JAForbes)](https://github.com/JAForbes/pr-release/pull/144)
+
+# Release v0.8.0
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+#### [Rollbacks (@JAForbes)](https://github.com/JAForbes/pr-release/pull/130)
+
+Safe, simple rollbacks.  Click a button and your main and next branch will automatically fast forward to a commit that reverts changes from a prior release.
+
+### Patches
+
+#### [Reinstate rolled back changes from v0.7.11 (@JAForbes)](https://github.com/JAForbes/pr-release/pull/139)
+
+This PR contains all changes after v0.7.10 through to the latest release v0.7.11.  These changes were previously removed from next and main.
+#### [Reinstate rolled back changes from v0.7.12 (@JAForbes)](https://github.com/JAForbes/pr-release/pull/140)
+
+This PR contains all changes after v0.7.11 through to the latest release v0.7.12.  These changes were previously removed from next and main.
+
+# Release v0.7.11
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Rollback test 3 (@JAForbes)](https://github.com/JAForbes/pr-release/pull/137)
+
+# Release v0.7.10
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Reinstate rolled back changes: from v0.7.9 (@JAForbes)](https://github.com/JAForbes/pr-release/pull/135)
+
+This PR contains all changes after v0.7.8 through to the latest release v0.7.9.  These changes were previously removed from next and main.
+
+# Release v0.7.9
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Introduce change so I can test rollbacks (@JAForbes)](https://github.com/JAForbes/pr-release/pull/131)
+
 # Release v0.7.8
 
 Thank you to the following contributors for helping make **pr-release** better:
