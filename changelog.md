@@ -1,4 +1,22 @@
 
+# Release v0.8.1
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [CI Rollback Test (@JAForbes)](https://github.com/JAForbes/pr-release/pull/144)
+
 # Release v0.8.0
 
 Thank you to the following contributors for helping make **pr-release** better:
