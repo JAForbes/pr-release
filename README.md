@@ -174,3 +174,9 @@ This is a new sentence I am adding, that I will rollback later.
 ### This is another rollback test
 
 I am adding this change, to test that rollbacks in CI work as expected.
+
+### Rollback test
+
+Rollbacks work when invoked locally, but CI has reporting (incorrectly) there is no diff between releases.
+
+I've just added `fetch-depth:0` in `actions/checkout` to hopefully resolve that.
