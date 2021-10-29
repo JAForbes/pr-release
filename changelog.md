@@ -1,4 +1,22 @@
 
+# Release v0.8.4
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [yaml... (@JAForbes)](https://github.com/JAForbes/pr-release/pull/151)
+
 # Release v0.8.3
 
 Thank you to the following contributors for helping make **pr-release** better:
