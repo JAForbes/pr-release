@@ -163,36 +163,3 @@ subcommands:
                         By default will archive the old target branch.  Use --clean
                         to remove the old target branch.
 ```
-
-
-### Rollback test
-
-This is a change I am going to release into production and then rollback.
-
-This is a new sentence I am adding, that I will rollback later.
-
-### This is another rollback test
-
-I am adding this change, to test that rollbacks in CI work as expected.
-
-### Rollback test
-
-Rollbacks work when invoked locally, but CI has reporting (incorrectly) there is no diff between releases.
-
-I've just added `fetch-depth:0` in `actions/checkout` to hopefully resolve that.
-
----
-
-I accidentally committed directly to `next`, this change will be a feature PR which will avoid #149 ...
-
-### Another change for testing rollbacks
-
-Here we go....
-
-### Need some more changes
-
-I had some misconfigued yml templates so these changes can't be rolled back as it would rollback the yml fixes.  This change can be rolled back...
-
-### Rollbacks seem to be working in CI
-
-But lets do a few more to be sure! 🚀🚀🚀
