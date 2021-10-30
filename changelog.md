@@ -1,4 +1,24 @@
 
+# Release v0.8.14
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Increment semver when committing directly to next (@JAForbes)](https://github.com/JAForbes/pr-release/pull/168)
+
+Previously, if you edited some markdown files and committed directly to next, the auto generated release PR would have the same semver version as main.
+
 # Release v0.8.11
 
 Thank you to the following contributors for helping make **pr-release** better:
