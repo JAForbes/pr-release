@@ -98,7 +98,7 @@ npx pr-release pr --source v2-next --target v2
 ```
 pr-release 
 
-version: 0.10.0
+version: 0.11.1
 
 pr-release subcommand --options
 
@@ -122,6 +122,14 @@ subcommands:
 
                         Less ceremonial changelog output.
 
+    --no-contributors
+
+                        Do not include contributor information in PR description or changelog
+
+    --no-thanks
+
+                        Do not thank contributors in changelog or release PR
+
   merge
 
                         Commits updated changelog and creates new npm/github/etc release.
@@ -142,11 +150,6 @@ subcommands:
     --changelog
 
                         Generate/update the markdown changelog.
-
-    --compact
-
-                        Less ceremonial changelog output.
-
 
   actions-yml
 
