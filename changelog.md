@@ -1,10 +1,6 @@
 
 # Release v0.11.0
 
-Thank you to the following contributors for helping make **pr-release** better:
-
-- @JAForbes
-
 ### Minor Changes
 
 #### [Automatically update CLI help in readme (@JAForbes)](https://github.com/JAForbes/pr-release/pull/187)
@@ -12,10 +8,6 @@ Thank you to the following contributors for helping make **pr-release** better:
 Ensure our docs stay in sync with the CLI help.
 
 # Release v0.9.2
-
-Thank you to the following contributors for helping make **pr-release** better:
-
-- @JAForbes
 
 ### Patch Changes
 
