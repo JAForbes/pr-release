@@ -94,8 +94,11 @@ npx pr-release pr --source v2-next --target v2
 
 ## API
 
+<a name="help-start"></a>
 ```
 pr-release 
+
+version: 0.10.0
 
 pr-release subcommand --options
 
@@ -115,6 +118,10 @@ subcommands:
 
                         Updates or creates the release PR.  Should run on every relevant merge event.
 
+    --compact
+
+                        Less ceremonial changelog output.
+
   merge
 
                         Commits updated changelog and creates new npm/github/etc release.
@@ -132,6 +139,14 @@ subcommands:
                         Use --clean to remove the archived old target branch once the process has
                         completed successfully.
 
+    --changelog
+
+                        Generate/update the markdown changelog.
+
+    --compact
+
+                        Less ceremonial changelog output.
+
 
   actions-yml
 
@@ -142,6 +157,42 @@ subcommands:
                         Generate a feature-pr for the current branch that targets
                         the source branch if the push event is not for the target
                         or source branch.
+
+  rollback
+
+                        Updates the --source and --target branch to a previous
+                        release point but retains version information and any
+                        other excluded files (e.g. package.json/lock).
+
+                        Unlike git revert we do not apply changes that undoes
+                        the current change, we rewind time to that point 
+                        in time and then re-apply specific changes like git tags
+                        and manifest files.
+
+                        The previous version of history is kept in a new branch
+                        which is called rollback-<old-version-slug>-<new-version-slug>
+                        where the slug is replacing special characters with underscores.
+
+                        This branch will then automatically have a PR created targeting
+                        the --source branch that if merged would generate a release PR that would 
+                        reinstate the state prior to rolling back.
+
+                        This is a perfect place to identify fixes for the issue that triggered
+                        a rollback in the first place.
+
+    --version=<tag>
+
+                        The version, git ref or SHA to rollback too.  The version
+                        must exist in the --source history.  If not provided 
+                        the version will be inferred to be the last release.
+                        We identify releases by searching through the github releases
+                        API response.
+
+    --ignore <glob>
+
+                        Specify files that should not be rolled back.  Any files matching these globs
+                        will be re-applied to the rollback commit.  This is useful for 
+                        maintaining version updates in manifest files such as package.json.
 
   Advanced Commands
   -----------------
@@ -162,4 +213,7 @@ subcommands:
 
                         By default will archive the old target branch.  Use --clean
                         to remove the old target branch.
+
+
 ```
+<a name="help-end"></a>

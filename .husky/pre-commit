@@ -2,4 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 node bin.js generate-templates
-git add templates/*
+node bin.js update-docs
+git add templates/* README.md
