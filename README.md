@@ -192,7 +192,3 @@ Here we go....
 ### Need some more changes
 
 I had some misconfigued yml templates so these changes can't be rolled back as it would rollback the yml fixes.  This change can be rolled back...
-
-### Rollbacks seem to be working in CI
-
-But lets do a few more to be sure! 🚀🚀🚀
