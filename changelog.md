@@ -1,4 +1,24 @@
 
+# Release v0.8.9
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Major Changes
+
+No major changes in this release.
+
+### Minor Changes
+
+No minor changes in this release.
+
+### Patches
+
+#### [Reinstate rolled back changes from v0.8.7 (@JAForbes)](https://github.com/JAForbes/pr-release/pull/159)
+
+This PR contains all changes after v0.8.6 through to the latest release v0.8.7.  These changes were previously removed from next and main.
+
 # Release v0.8.7
 
 Thank you to the following contributors for helping make **pr-release** better:
