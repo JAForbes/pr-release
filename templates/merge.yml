@@ -6,6 +6,7 @@ on:
 
   workflow_dispatch:
 
+# Let's see if this appears in the template
 jobs:
   merge:
 
