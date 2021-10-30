@@ -6,7 +6,6 @@ on:
 
   workflow_dispatch:
 
-# Seems to be working
 jobs:
   merge:
 
