@@ -1,4 +1,12 @@
 
+# Release v0.12.0
+
+### Minor Changes
+
+#### [Customize level of contributor mentions (@JAForbes)](https://github.com/JAForbes/pr-release/pull/191)
+
+Fixes #111 and #190.
+
 # Release v0.11.0
 
 ### Minor Changes
