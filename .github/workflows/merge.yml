@@ -28,10 +28,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: node bin.js changelog --target main --source next --out changelog.md
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-    - run: node bin.js merge --target main --source next --commit --force --clean
+    - run: node bin.js merge --target main --source next --commit --force --clean --changelog --compact
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
