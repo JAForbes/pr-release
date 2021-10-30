@@ -1,4 +1,17 @@
 
+# Release v0.9.2
+
+Thank you to the following contributors for helping make **pr-release** better:
+
+- @JAForbes
+
+### Patch Changes
+
+#### [Use compact option in pr yml (@JAForbes)](https://github.com/JAForbes/pr-release/pull/182)
+
+
+#### [Use the new --changelog flag in merge command (@JAForbes)](https://github.com/JAForbes/pr-release/pull/180)
+
 # Release v0.9.0
 
 Thank you to the following contributors for helping make **pr-release** better:
