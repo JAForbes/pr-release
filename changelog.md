@@ -20,7 +20,7 @@ Thank you to the following contributors for helping make **pr-release** better:
 
 ### Minor Changes
 
-#### [Skip changelog generation with content is empty (@JAForbes)](https://github.com/JAForbes/pr-release/pull/174)
+#### [Skip changelog generation when content is empty (@JAForbes)](https://github.com/JAForbes/pr-release/pull/174)
 
 Fixes #149.
 # Release v0.8.14
