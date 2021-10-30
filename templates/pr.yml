@@ -3,7 +3,7 @@ name: pr
 on:
   push:
     branches: [ $source ]
-    
+
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,6 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     # todo-james replace with npx pr-release pr
-    - run: node bin.js pr --verbose --target $target --source $source
+    - run: npx pr-release pr --verbose --target $target --source $source --compact
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
