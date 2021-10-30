@@ -31,7 +31,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "args": ["changelog"],
+            "args": ["changelog", "--out"],
             "program": "${workspaceFolder}/bin.js"
         },
         {
