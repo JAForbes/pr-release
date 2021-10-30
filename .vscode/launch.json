@@ -27,6 +27,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "generate-templates",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["generate-templates"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "changelog",
             "skipFiles": [
                 "<node_internals>/**"

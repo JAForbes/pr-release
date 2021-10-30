@@ -20,7 +20,7 @@ jobs:
       with: 
         ref: '$source'
         fetch-depth: 0
-        
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
@@ -28,14 +28,13 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build --if-present
-    - run: node bin.js merge --target $target --source $source --commit --force --clean --changelog --compact
+    - run: npx pr-release merge --target $target --source $source --commit --force --clean --changelog --compact
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-    # Uncomment to publish to npm
-    # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-    #   name: Setup NPM Auth
-    #   env:
-    #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    # - run: npm publish
-    #   name: Publish
+    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+      name: Setup NPM Auth
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - run: npm publish
+      name: Publish
