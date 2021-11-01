@@ -102,7 +102,7 @@ npx pr-release pr --source v2-next --target v2
 ```
 pr-release 
 
-version: 0.12.0
+version: 0.13.1
 
 pr-release subcommand --options
 
