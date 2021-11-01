@@ -98,7 +98,7 @@ npx pr-release pr --source v2-next --target v2
 ```
 pr-release 
 
-version: 0.11.1
+version: 0.12.0
 
 pr-release subcommand --options
 
@@ -196,6 +196,20 @@ subcommands:
                         Specify files that should not be rolled back.  Any files matching these globs
                         will be re-applied to the rollback commit.  This is useful for 
                         maintaining version updates in manifest files such as package.json.
+
+  infer-version
+
+                        Outputs the version pr-release estimates the next release should be.
+                        This is the same function used to generate the versions in the title
+                        header and body but as a standalone command.
+
+                        Use the --quiet option to log only the version.  Otherwise
+                        a json response will include the version and the strategy used to infer
+                        it.
+
+    -q --quiet
+
+                        Only logs the semver to stdout
 
   Advanced Commands
   -----------------

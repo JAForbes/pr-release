@@ -28,3 +28,8 @@ jobs:
     - run: node bin.js pr --verbose --target main --source next --compact
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+    - run: version=$(node bin.js infer-version -q)
+    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $version
+    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=next
+    - run: cat package.json
