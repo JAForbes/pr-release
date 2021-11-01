@@ -29,6 +29,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(node bin.js infer-version)
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=next
-    - run: cat package.json
+    # The following publishes a pre-release version every time `next` is updated
+    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(node bin.js infer-version)  # prr:comment
+    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=next       # prr:comment
+    - run: npm publish --tag=next                                                                       # prr:comment
+      env:                                                                                              # prr:comment
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                             # prr:comment
