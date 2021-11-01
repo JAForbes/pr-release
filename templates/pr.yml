@@ -29,7 +29,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
-    - run: version=$(npx pr-release infer-version -q)
+    - run: npx pr-release infer-version
+    - run: version=$(npx pr-release infer-version)
+    - run: echo $version
     - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $version
     - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source
     - run: cat package.json
