@@ -203,14 +203,6 @@ subcommands:
                         This is the same function used to generate the versions in the title
                         header and body but as a standalone command.
 
-                        Use the --quiet option to log only the version.  Otherwise
-                        a json response will include the version and the strategy used to infer
-                        it.
-
-    -q --quiet
-
-                        Only logs the semver to stdout
-
   Advanced Commands
   -----------------
 
