@@ -1,4 +1,19 @@
 
+# Release v0.14.0
+
+### Minor Changes
+
+#### [Publish a pre-release on every push to next (@JAForbes)](https://github.com/JAForbes/pr-release/pull/203)
+
+
+   
+### Patch Changes
+
+#### [Fix publish auth (@JAForbes)](https://github.com/JAForbes/pr-release/pull/204)
+
+
+#### [Fix bash vars not portable across run lines (@JAForbes)](https://github.com/JAForbes/pr-release/pull/200)
+
 # Release v0.13.1
 
 ### Patch Changes
