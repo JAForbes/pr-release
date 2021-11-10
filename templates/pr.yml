@@ -30,11 +30,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     # The following publishes a pre-release version every time `$source` is updated
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(npx pr-release infer-version)  # prr:comment
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source       # prr:comment
-    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                   # prr:comment
-      name: Setup NPM Auth                                                                                 # prr:comment
-      env:                                                                                                 # prr:comment
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                                # prr:comment
-    - run: npm publish --tag=$source                                                                       # prr:comment
-
+#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(npx pr-release infer-version)  
+#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source       
+#    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                
+#      name: Setup NPM Auth                                                                              
+#      env:                                                                                              
+#        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                             
+#    - run: npm publish --tag=$source                                                                       
