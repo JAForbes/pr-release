@@ -27,13 +27,6 @@ jobs:
     # todo-james replace with npx pr-release pr
     - run: node bin.js pr --verbose --target main --source next --compact
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-    # The following publishes a pre-release version every time `next` is updated
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(node bin.js infer-version)  # prr:comment
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=next       # prr:comment
-    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                # prr:comment
-      name: Setup NPM Auth                                                                              # prr:comment
-      env:                                                                                              # prr:comment
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                             # prr:comment
-    - run: npm publish --tag=next                                                                       # prr:comment
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: node bin.js extractChangelog --target main --source next --compact --out
+    - run: cat version

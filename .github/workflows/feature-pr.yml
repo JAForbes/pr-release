@@ -24,4 +24,4 @@ jobs:
     - run: npm run build --if-present
     - run: node bin.js feature-pr --verbose --target main --source next
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
