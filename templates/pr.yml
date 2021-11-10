@@ -28,12 +28,5 @@ jobs:
     - run: npx pr-release pr --verbose --target $target --source $source --compact
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-    # The following publishes a pre-release version every time `$source` is updated
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(npx pr-release infer-version)  
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source       
-#    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                
-#      name: Setup NPM Auth                                                                              
-#      env:                                                                                              
-#        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                             
-#    - run: npm publish --tag=$source                                                                       
+    - run: npx pr-release extractChangelog --target $target --source $source --compact --out
+    - run: cat version
