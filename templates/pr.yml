@@ -27,6 +27,6 @@ jobs:
     # todo-james replace with npx pr-release pr
     - run: npx pr-release pr --verbose --target $target --source $source --compact
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: npx pr-release extractChangelog --target $target --source $source --compact --out
     - run: cat version

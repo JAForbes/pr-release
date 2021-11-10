@@ -27,4 +27,4 @@ jobs:
     # todo-james replace with npx pr-release rollback
     - run: node bin.js rollback --verbose --target main --source next --verbose --ignore 'package*' --ignore changelog.md
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
