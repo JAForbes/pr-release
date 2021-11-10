@@ -1,4 +1,12 @@
 
+# Release v0.15.0
+
+### Minor Changes
+
+#### [Pre-process comments in templates (@JAForbes)](https://github.com/JAForbes/pr-release/pull/205)
+
+Fixes #194.
+
 # Release v0.14.0
 
 ### Minor Changes
