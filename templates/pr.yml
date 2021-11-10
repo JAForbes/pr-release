@@ -31,7 +31,7 @@ jobs:
 # The following will publish a pre-release to npm
 #    - run: npx pr-release extract-changelog --target $target --source $source --compact --out                  
 #    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./pr-release/version) 
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source   
+#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source     
 #    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                              
 #      name: Setup NPM Auth                                                                            
 #      env:                                                                                            
