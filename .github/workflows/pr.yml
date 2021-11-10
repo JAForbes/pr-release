@@ -28,5 +28,5 @@ jobs:
     - run: node bin.js pr --verbose --target main --source next --compact
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - run: node bin.js extractChangelog --target main --source next --compact --out
+    - run: node bin.js extract-changelog --target main --source next --compact --out
     - run: cat version
