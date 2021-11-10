@@ -29,11 +29,14 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 # The following will publish a pre-release to npm
     - run: node bin.js extract-changelog --target main --source next --compact --out                      # prr:comment
+    - run: cat ./pr-release/nextVersion
     - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./pr-release/nextVersion) # prr:comment
+    - run: cat package.json
     - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=next         # prr:comment
-    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                  # prr:comment
-      name: Setup NPM Auth                                                                                # prr:comment
-      env:                                                                                                # prr:comment
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                               # prr:comment
-    - run: npm publish --tag=next                                                                         # prr:comment
-      name: Publish                                                                                       # prr:comment
+    - run: cat package.json
+    # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                  # prr:comment
+    #   name: Setup NPM Auth                                                                                # prr:comment
+    #   env:                                                                                                # prr:comment
+    #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                               # prr:comment
+    # - run: npm publish --tag=next                                                                         # prr:comment
+    #   name: Publish                                                                                       # prr:comment
