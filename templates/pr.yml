@@ -28,15 +28,12 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 # The following will publish a pre-release to npm
-#    - run: npx pr-release extract-changelog --target $target --source $source --compact --out                      
-    - run: cat ./.pr-release/nextVersion
+#    - run: npx pr-release extract-changelog --target $target --source $source --compact --out                       
 #    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./.pr-release/nextVersion) 
-    - run: cat package.json
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source         
-    - run: cat package.json
-#    # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                  
-#    #   name: Setup NPM Auth                                                                                
-#    #   env:                                                                                                
-#    #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                               
-#    # - run: npm publish --tag=$source                                                                         
-#    #   name: Publish                                                                                       
+#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source          
+#    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                   
+#      name: Setup NPM Auth                                                                                 
+#      env:                                                                                                 
+#        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                                
+#    - run: npm publish --tag=$source                                                                          
+#      name: Publish                                                                                        
