@@ -33,9 +33,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     # The following will publish the release to npm
-    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc  # prr:comment
-      name: Setup NPM Auth                                                # prr:comment
-      env:                                                                # prr:comment
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                               # prr:comment
-    - run: npm publish                                                    # prr:comment
-      name: Publish                                                       # prr:comment
+#    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc  
+#      name: Setup NPM Auth                                                
+#      env:                                                                
+#        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                               
+#    - run: npm publish                                                    
+#      name: Publish                                                       
