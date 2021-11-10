@@ -29,8 +29,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 # The following will publish a pre-release to npm
 #    - run: npx pr-release extract-changelog --target $target --source $source --compact --out                      
-    - run: cat ./pr-release/nextVersion
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./pr-release/nextVersion) 
+    - run: cat ./.pr-release/nextVersion
+#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./.pr-release/nextVersion) 
     - run: cat package.json
 #    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source         
     - run: cat package.json
