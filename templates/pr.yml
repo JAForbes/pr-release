@@ -6,6 +6,8 @@ on:
 
   workflow_dispatch:
 
+concurrency: prr:pre-release
+
 jobs:
   pr:
 
