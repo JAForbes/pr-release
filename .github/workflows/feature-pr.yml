@@ -4,6 +4,8 @@ on:
   push:
   workflow_dispatch:
 
+concurrency: prr:feature-${{ github.ref }}
+
 jobs:
   feature:
 

@@ -3,6 +3,8 @@ name: rollback
 on:
   workflow_dispatch:
 
+concurrency: prr:deploy
+
 jobs:
   pr:
 
