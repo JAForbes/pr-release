@@ -1,0 +1,19 @@
+{
+    "extends": "../.eslintrc.json",
+    "globals": {
+        "$": true,
+        "chalk": true,
+        "nothrow": true
+    },
+	"env": {
+        "browser": false,
+        "node": true
+	},
+    "parserOptions": {
+        "ecmaVersion": 2021
+    },
+    "rules": {
+        "no-process-exit": "off",
+        "no-process-env": "off"
+    }
+}
