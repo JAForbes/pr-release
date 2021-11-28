@@ -12,7 +12,7 @@ terraform {
 
   backend "s3" {
     # change to mithril aws account later
-    bucket = "pr-release.org"
+    bucket = "pr-release-tfstate-2.org"
     key = "tfstate.json"
     region = "us-east-1"
   }
