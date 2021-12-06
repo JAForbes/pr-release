@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs/promises'
+import crypto from 'crypto'
 import { $ } from 'zx'
 import * as marked from 'marked'
 import * as linkedom from 'linkedom'
@@ -31,10 +32,7 @@ const wrappedHTML = ({ content='', title=''}) =>
         </article>
     </main>
     <footer>
-        <p>Copyright © 2006 The Example Company</p>
-        <p><a href="about.html">About</a> -
-        <a href="policy.html">Privacy Policy</a> -
-        <a href="contact.html">Contact Us</a></p
+        <p>Copyright © James Forbes</p>
     </footer>
 </body>
 </html>`
@@ -77,7 +75,7 @@ async function main(){
         .catch( () => null )
     
     await fs.mkdir('web-dist')
-    let cssInnerText = await fs.readFile('./scripts/style.css', 'utf8')
+    let css = await fs.readFile('./scripts/style.css', 'utf8')
 
     xs.map( async ({ filepath, html, document }) => {
         let htmlPath = 
@@ -86,12 +84,13 @@ async function main(){
             .replace('.md', '/index.html')
             .replace('index/index', 'index')
 
-        let style = document.createElement('style')
-        style.innerText = cssInnerText
-        document.head.appendChild(style)
-        
+        let link = document.createElement('link')
+        link.setAttribute('rel', 'stylesheet')
+        link.setAttribute('href', '/style.css?hash='+ crypto.createHash('sha256').update(css).digest('hex'))
+        document.head.appendChild(link)
         html = document.body.parentNode.outerHTML
         await fs.mkdir(path.dirname(htmlPath), { recursive: true, force: true })
+        await fs.writeFile('./web-dist/style.css', css)
         await fs.writeFile(htmlPath, html)
     })
     xs = Promise.all(xs)

@@ -1,4 +1,4 @@
-/* globals console, process */
+/* globals process */
 import { $, argv } from 'zx'
 
 async function tf({}, ...args){
@@ -8,8 +8,8 @@ async function tf({}, ...args){
 
 async function watch(){
     await Promise.all([
-        $`npx nodemon scripts/build-docs.js`,
-        // $`npx serve webdist`
+        $`npx nodemon -e js,css,html -w "scripts/*" scripts/build-docs.js`,
+        $`npx vite`
     ])
 }
 
