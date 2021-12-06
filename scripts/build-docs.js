@@ -6,61 +6,41 @@ import * as marked from 'marked'
 import * as linkedom from 'linkedom'
 import fm from 'front-matter'
 
-const wrappedHTML = ({ content='', title=''}) =>
-`<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title}</title>
-</head>
-<body>
-    <header>
-        <h1>${title}</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/blog/">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <article>
-        ${content}
-        </article>
-    </main>
-    <footer>
-        <p>Copyright © James Forbes</p>
-    </footer>
-</body>
-</html>`
-
 async function main(){
 
     let xs = (await $`find docs -name "*.md"`).stdout.trim().split('\n')
+    
+    let metadata = await fs.readFile('.pr-release/metadata', 'utf8')
     
     xs = xs.map( async filepath => {
         let md = await fs.readFile(filepath, 'utf8')
         let { attributes={}, body } = fm(md)
 
+        let templateHTML = await fs.readFile('./scripts/index.html', 'utf8')
+        let {document, window } = linkedom.parseHTML(templateHTML);
 
-        let html = wrappedHTML({
-            title: attributes.title
-            ,content: marked.marked(body)
-        })
+        'Update template with page content'; {
+            let h1 = document.getElementById('main-header')
+            let title = document.getElementsByTagName('title')
+            let content = document.getElementById('content')
+    
+            content.innerHTML = marked.marked(body)
+            title.innerHTML = attributes.title
+            h1.innerHTML = attributes.title
+        }
 
-        
-        let { document, window } = linkedom.parseHTML(html)
-        
+        'make pr-release metadata available to scripts'; {
+            let $ = document.createElement('script')
+            $.innerHTML = `window.prr = ${metadata};`
+            document.body.appendChild($)
+        }
+
         let url = '/' + filepath.replace('docs/', '').replace('.md', '').replace('index', '')
 
         fm()
 
         return {
             filepath
-            , html
             , url
             , document
             , window
@@ -77,7 +57,7 @@ async function main(){
     await fs.mkdir('web-dist')
     let css = await fs.readFile('./scripts/style.css', 'utf8')
 
-    xs.map( async ({ filepath, html, document }) => {
+    xs.map( async ({ filepath, document }) => {
         let htmlPath = 
             filepath
             .replace('docs/', 'web-dist/')
@@ -88,7 +68,7 @@ async function main(){
         link.setAttribute('rel', 'stylesheet')
         link.setAttribute('href', '/style.css?hash='+ crypto.createHash('sha256').update(css).digest('hex'))
         document.head.appendChild(link)
-        html = document.body.parentNode.outerHTML
+        let html = document.body.parentNode.outerHTML
         await fs.mkdir(path.dirname(htmlPath), { recursive: true, force: true })
         await fs.writeFile('./web-dist/style.css', css)
         await fs.writeFile(htmlPath, html)

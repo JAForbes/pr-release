@@ -1,3 +1,5 @@
 * {
     color: green;
+    font-display: fallback;
+    font-family: 'Inter', Helvetica, sans-serif;
 }
