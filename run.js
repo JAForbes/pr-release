@@ -7,6 +7,12 @@ async function tf({}, ...args){
 }
 
 async function watch(){
+    // Dump the latest release metadata for rending
+    await $`node -r dotenv/config bin.js extract-changelog`
+
+    // Run vite and build-docs in parallel
+    // both will watch the file system and do their thing
+    // if anything changes
     await Promise.all([
         $`npx nodemon -e js,css,html -w "scripts/*" scripts/build-docs.js`,
         $`npx vite`

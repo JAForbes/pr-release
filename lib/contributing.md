@@ -2,11 +2,12 @@
 
 ## Core
 
-### To run the CLI in development
+### To run the CLI locally for development
 
-```
-node bin.js
-```
+1. Create a .env file and add the required env variables
+2. `node -r dotenv/config bin.js` to run the CLI
+3. There is a provided `launch.json` which is compatible with VS Code's debugger
+4. Use `--verbose` for verbose logging.
 
 ### Guidelines
 
