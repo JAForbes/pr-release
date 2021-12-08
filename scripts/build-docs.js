@@ -20,13 +20,13 @@ async function main(){
         let {document, window } = linkedom.parseHTML(templateHTML);
 
         'Update template with page content'; {
-            let h1 = document.getElementById('main-header')
+            // let h1 = document.getElementById('main-header')
             let title = document.getElementsByTagName('title')
             let content = document.getElementById('content')
     
             content.innerHTML = marked.marked(body)
             title.innerHTML = attributes.title
-            h1.innerHTML = attributes.title
+            // h1.innerHTML = attributes.title
         }
 
         'make pr-release metadata available to scripts'; {
