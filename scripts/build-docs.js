@@ -24,9 +24,19 @@ async function main(){
             let title = document.getElementsByTagName('title')
             let content = document.getElementById('content')
     
+            let contentHeader = document.getElementById('content-title')
+            let contentDescription = document.getElementById('content-description')
             content.innerHTML = marked.marked(body)
             title.innerHTML = attributes.title
             // h1.innerHTML = attributes.title
+
+            if( attributes.title ) {
+                contentHeader.innerHTML = attributes.title
+            }
+
+            if( attributes.description ) {
+                contentDescription.innerHTML = attributes.description
+            }
         }
 
         'make pr-release metadata available to scripts'; {

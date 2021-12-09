@@ -1,9 +1,7 @@
 ---
-title: pr-release - Environment Variables
+title: Environment Variables
 description: How to set up your environment.
 ---
-
-# Environment Variables
 
 ## npm Token
 
