@@ -163,6 +163,7 @@ nav ul {
     body header {
         display: grid;
         justify-content: center;
+        text-align: center
     }
     
     ul {
