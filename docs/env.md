@@ -5,7 +5,7 @@ description: How to set up your environment.
 
 ## npm Token
 
-How to set up an npm access token for publish releases and pre-releases.
+How to set up an npm access token for publishing releases and pre-releases.
 
 TBC
 

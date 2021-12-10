@@ -5,7 +5,10 @@ import { $ } from 'zx'
 import * as marked from 'marked'
 import * as linkedom from 'linkedom'
 import fm from 'front-matter'
+import sanitizeHTML from 'sanitize-html'
 
+
+$.verbose = false
 async function main(){
 
     let xs = (await $`find docs -name "*.md"`).stdout.trim().split('\n')
@@ -18,6 +21,7 @@ async function main(){
 
         let templateHTML = await fs.readFile('./scripts/index.html', 'utf8')
         let {document, window } = linkedom.parseHTML(templateHTML);
+        let scripts = {};
 
         'Update template with page content'; {
             // let h1 = document.getElementById('main-header')
@@ -40,14 +44,32 @@ async function main(){
         }
 
         'make pr-release metadata available to scripts'; {
-            let $ = document.createElement('script')
-            $.innerHTML = `window.prr = ${metadata};`
-            document.body.appendChild($)
+            scripts['./data.js'] = 
+            `window.prr = ${metadata}; window.frontMatter = ${JSON.stringify(attributes)};`
         }
 
-        let url = '/' + filepath.replace('docs/', '').replace('.md', '').replace('index', '')
+        function insertAfter(newNode, referenceNode) {
+            referenceNode.parentNode
+                .insertBefore(newNode, referenceNode.nextSibling);
+        }
 
-        fm()
+        'execute bash code blocks and inject output into page'; 
+        if ( attributes.executeCodeBlocks ) {
+            for( let block of document.querySelectorAll('code.language-bash') ) {
+                
+                let output = await $([block.innerHTML])
+                let resultBlock = document.createElement('pre')
+                let codeResultBlock = document.createElement('code')
+
+                resultBlock.classList.add("result")
+                codeResultBlock.innerHTML = sanitizeHTML(output+'');
+                resultBlock.appendChild(codeResultBlock);
+                insertAfter(resultBlock, block)
+            }
+        }
+        
+
+        let url = '/' + filepath.replace('docs/', '').replace('.md', '').replace('index', '')
 
         return {
             filepath
@@ -55,6 +77,7 @@ async function main(){
             , document
             , window
             , attributes
+            , scripts
         }
     })
 
@@ -64,10 +87,11 @@ async function main(){
         .rm('web-dist', { recursive: true, force: true })
         .catch( () => null )
     
-    await fs.mkdir('web-dist')
+    await fs.mkdir('web-dist').catch( () => {})
     let css = await fs.readFile('./scripts/style.css', 'utf8')
 
-    xs.map( async ({ filepath, document }) => {
+    xs.map( async ({ filepath, document, scripts }) => {
+        
         let htmlPath = 
             filepath
             .replace('docs/', 'web-dist/')
@@ -78,10 +102,24 @@ async function main(){
         link.setAttribute('rel', 'stylesheet')
         link.setAttribute('href', '/style.css?hash='+ crypto.createHash('sha256').update(css).digest('hex'))
         document.head.appendChild(link)
-        let html = document.body.parentNode.outerHTML
+        
         await fs.mkdir(path.dirname(htmlPath), { recursive: true, force: true })
+
+        for( let [scriptPath, content] of Object.entries(scripts) ) {
+            let resolvedPath = path.resolve(path.dirname(htmlPath), scriptPath)
+
+            await fs.writeFile(resolvedPath, content, 'utf8');
+            
+            let $ = document.createElement('script')
+            $.setAttribute('src', scriptPath)
+            document.body.appendChild($)
+        }
+
+        let html = document.body.parentNode.outerHTML
+        
         await fs.writeFile('./web-dist/style.css', css)
         await fs.writeFile(htmlPath, html)
+
     })
     xs = Promise.all(xs)
 }

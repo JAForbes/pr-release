@@ -39,6 +39,7 @@
     "linkedom": "^0.13.0",
     "marked": "^4.0.3",
     "rollup": "^2.56.3",
+    "sanitize-html": "^2.6.1",
     "zx": "^4.2.0"
   },
   "dependencies": {
