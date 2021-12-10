@@ -31,4 +31,4 @@ Check out the [Quick Start](./quick-start/) Guide
 
 ## Can I help?
 
-Contribution are welcome!  Checkout out the (very early) [contributing notes](https://github.com/JAForbes/pr-release/blob/next/lib/contributing.md) and [create an issue](https://github.com/JAForbes/pr-release/issues/new) if you have any ideas.
+Contributions are welcome!  Checkout out the (very early) [contributing notes](https://github.com/JAForbes/pr-release/blob/next/lib/contributing.md) and [create an issue](https://github.com/JAForbes/pr-release/issues/new) if you have any ideas.

@@ -160,8 +160,13 @@ article #content blockquote {
         grid-template-columns: minmax(0em, 70em);
         justify-content: center;
         margin: 0em;
+        gap: 8em;
     }
     
+    a.current:before {
+        content: '🚀';
+    }
+
     body main nav {
         display: grid;
         gap: var(--gap-4);

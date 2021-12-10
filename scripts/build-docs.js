@@ -48,6 +48,16 @@ async function main(){
             `window.prr = ${metadata}; window.frontMatter = ${JSON.stringify(attributes)};`
         }
 
+        'highlight anchor'; {
+            scripts['./highlight-anchor.js'] = `
+                for( let el of document.querySelectorAll('a') ) {
+                    if (el.href == window.location.href) {
+                        el.classList.add('current')
+                    }
+                }
+            `
+        }
+
         function insertAfter(newNode, referenceNode) {
             referenceNode.parentNode
                 .insertBefore(newNode, referenceNode.nextSibling);

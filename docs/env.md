@@ -3,20 +3,28 @@ title: Environment Variables
 description: How to set up your environment.
 ---
 
+In order for **pr-release** to perform some operations you'll need to configure some environment variables on your github project.
+
+```.env
+# Create both these tokens then add them to your github project
+GITHUB_TOKEN=""
+NPM_TOKEN=""
+```
+
 ## npm Token
 
 How to set up an npm access token for publishing releases and pre-releases.
 
-TBC
+https://docs.npmjs.com/creating-and-viewing-access-tokens
 
 ## Personal Access Token
 
-How to set up a Github Personal access token to allow pr-release to generate pull requests, github releases and manage branches.
+How to set up a Github Personal access token to allow **pr-release** to generate pull requests, github releases and manage branches.
 
-TBC
+https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 ## Environment Settings
 
 How to link your Github and NPM token to your projects CI pipeline
 
-TBC
+https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository
