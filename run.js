@@ -8,7 +8,7 @@ async function tf({}, ...args){
 
 async function watch(){
     // Dump the latest release metadata for rending
-    await $`stat .pr-release || node -r dotenv/config bin.js extract-changelog`
+    await $`stat .pr-release || node -r dotenv/config bin.js extract-changelog --out`
 
     // Run vite and build-docs in parallel
     // both will watch the file system and do their thing
@@ -19,7 +19,13 @@ async function watch(){
     ])
 }
 
-const commands = { tf, watch }
+async function deploy(){
+    await $`node -r dotenv/config bin.js extract-changelog --out`
+    await $`node scripts/build-docs.js`
+    await $`npx @cloudflare/wrangler publish`
+}
+
+const commands = { tf, watch, deploy }
 
 {
     argv._ = process.argv.slice(2)

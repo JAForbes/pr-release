@@ -8,7 +8,6 @@ import fm from 'front-matter'
 import sanitizeHTML from 'sanitize-html'
 
 
-$.verbose = false
 async function main(){
 
     let xs = (await $`find docs -name "*.md"`).stdout.trim().split('\n')

@@ -1,0 +1,8 @@
+name = "pr-release"
+type = "webpack"
+route = "pr-release.org/*"
+usage_model = ''
+compatibility_flags = []
+workers_dev = false
+site = {bucket = "./web-dist",entry-point = "workers-site"}
+compatibility_date = "2021-12-10"
