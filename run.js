@@ -33,5 +33,3 @@ const commands = { tf, watch, deploy }
     const f = commands[command]
     if ( f ) f(argv, ...argv._)
 }
-
-// console.log(argv)
