@@ -20,7 +20,7 @@ async function deploy(){
     await $`npx @cloudflare/wrangler publish`
 }
 
-const commands = { tf, watch, deploy }
+const commands = { watch, deploy }
 
 {
     argv._ = process.argv.slice(2)
