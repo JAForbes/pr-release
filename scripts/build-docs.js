@@ -134,4 +134,3 @@ async function main(){
 }
 
 main()
-// console.log(marked.marked(`hello`))
