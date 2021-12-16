@@ -41,3 +41,11 @@ jobs:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                               # prr:comment
     - run: npm publish                                                    # prr:comment
       name: Publish                                                       # prr:comment
+                                                                          # prr:remove
+    - run: node run.js deploy                                             # prr:remove
+      name: Deploy to CF Worker                                           # prr:remove
+      env:                                                                # prr:remove
+        CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}                             # prr:remove
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                         # prr:remove
+        CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}                       # prr:remove
+        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}                         # prr:remove
