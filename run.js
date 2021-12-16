@@ -1,11 +1,6 @@
 /* globals process */
 import { $, argv } from 'zx'
 
-async function tf({}, ...args){
-    // $.verbose = false
-    await $`terraform -chdir=ops ${args}`
-}
-
 async function watch(){
     // Dump the latest release metadata for rending
     await $`stat .pr-release || node -r dotenv/config bin.js extract-changelog --out`
