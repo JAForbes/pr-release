@@ -1,4 +1,12 @@
 
+# Release v0.17.1
+
+### Patch Changes
+
+#### [Remove feature PR from CI and documentation (@JAForbes)](https://github.com/JAForbes/pr-release/pull/227)
+
+Fixes #225.
+
 # Release v0.15.0
 
 ### Minor Changes
