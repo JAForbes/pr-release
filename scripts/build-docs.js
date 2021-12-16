@@ -129,8 +129,10 @@ async function main(){
         await fs.writeFile('./web-dist/style.css', css)
         await fs.writeFile(htmlPath, html)
 
+        
     })
     xs = Promise.all(xs)
+    await $`cp -r ./scripts/assets ./web-dist/`
 }
 
 main()

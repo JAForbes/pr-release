@@ -2,6 +2,8 @@
 
 > 🚨 This repo does nothing right now, I'm just experimenting.  Do not use this.
 
+https://pr-release.org/
+
 ## Quick Start
 
 - Generate an admin personal access token and add it to your repo env as `GITHUB_TOKEN`
