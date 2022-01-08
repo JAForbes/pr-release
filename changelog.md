@@ -1,4 +1,12 @@
 
+# Release v0.17.3
+
+### Patch Changes
+
+#### [Use resolved path for actions-yml (@JAForbes)](https://github.com/JAForbes/pr-release/pull/232)
+
+Fixes #231.
+
 # Release v0.17.2
 
 ### Patch Changes
