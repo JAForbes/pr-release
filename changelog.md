@@ -1,4 +1,10 @@
 
+# Release v0.17.4
+
+### Patch Changes
+
+#### [Make bin shebang more reliable (@JAForbes)](https://github.com/JAForbes/pr-release/pull/235)
+
 # Release v0.17.3
 
 ### Patch Changes
