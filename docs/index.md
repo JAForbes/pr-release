@@ -5,14 +5,12 @@ description: Use Pull Requests to generate npm + github releases and changelogs
 
 ## How it works?
 
-1. 🤓 You push some code on a branch `feature-branch-1`.
-2. 🚀 **pr-release** creates a pull request for your feature targeting the `next` branch.
-3. 🤓 You merge the pull request into `next`
-4. 🚀 **pr-release** creates a pull request targeting the `main` branch.
-5. 🤓 You repeat step 1 and 3 a few times to build up a release candidate.
-6. 🚀 **pr-release** repeats step 2 and 4.
-7. 🤓 You merge the release PR into `main`
-8. 🚀 **pr-release** 
+1. 🤓 You merge a pull request into `next`
+2. 🚀 **pr-release** creates a release candidate pull request targeting the `main` branch.
+3. 🤓 You repeat step 1 a few times to build up a release.
+4. 🚀 **pr-release** repeats step 2.
+5. 🤓 You merge the release PR into `main`
+6. 🚀 **pr-release** 
 
     - 🚢 Updates or creates a changelog
     - ✅ Automatically increments the semver and applies a git tag
