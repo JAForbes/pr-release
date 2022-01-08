@@ -1,4 +1,12 @@
 
+# Release v0.17.2
+
+### Patch Changes
+
+#### [Remove unused feature from docs (@JAForbes)](https://github.com/JAForbes/pr-release/pull/229)
+
+The auto feature PR generation has a flaw that it would need an auth token for every contributor.  So it has been removed.
+
 # Release v0.17.1
 
 ### Patch Changes
