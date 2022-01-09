@@ -21,6 +21,22 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "cwd": "/home/james/src/harth/sum-type",
+            "args": ["pr"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "sum-type:pr",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/james/src/harth/sum-type",
+            "env": {
+                "GITHUB_REPOSITORY":"JAForbes/sum-type"
+            },
+            "envFile": "${workspaceFolder}/.env",
             "args": ["pr"],
             "program": "${workspaceFolder}/bin.js"
         },
@@ -71,6 +87,20 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
+            "args": ["merge", "--commit", "--target", "main", "--source", "next", "--verbose", "--force", "--clean", "--changelog", "--compact"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "sum-type:merge --commit",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "env": {
+                "GITHUB_REPOSITORY":"JAForbes/sum-type"
+            },
+            "envFile": "${workspaceFolder}/.env",
             "args": ["merge", "--commit", "--target", "main", "--source", "next", "--verbose", "--force", "--clean", "--changelog", "--compact"],
             "program": "${workspaceFolder}/bin.js"
         },
