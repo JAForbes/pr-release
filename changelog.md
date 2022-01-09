@@ -1,4 +1,12 @@
 
+# Release v0.17.9
+
+### Patch Changes
+
+#### [Improve prerelease handling (@JAForbes)](https://github.com/JAForbes/pr-release/pull/246)
+
+Retain prerelease name.
+
 # Release v0.17.8
 
 ### Patch Changes
