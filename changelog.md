@@ -1,4 +1,12 @@
 
+# Release v0.17.5
+
+### Patch Changes
+
+#### [Handle the case where there is no prior release (@JAForbes)](https://github.com/JAForbes/pr-release/pull/237)
+
+When identifying which branches belong to a release, we construct a github search query which finds branches dated after the previous release.
+
 # Release v0.17.4
 
 ### Patch Changes
