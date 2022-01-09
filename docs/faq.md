@@ -13,7 +13,7 @@ That version is a `semver.inc(currentRelease.version, 'patch')` by default for e
 
 The semver increment level defaults to `patch` but can be set to `major`, `minor`, `patch` or `prerelease` by putting a corresponding label on the feature branch PR.
 
-**pr-release** is especially careful with pre-releases.  If the last release was a `prerelease` then the next release will also default to a semver `prerelease`.
+**pr-release** is especially careful with pre-releases.  If the last release was a `prerelease` then the next release will also default to a semver `prerelease`.  This makes it hard to accidentally publish to the stable channel without being explicit.
 
 **pr-release** infers the current version by checking multiple sources (package.json, release PR header, git tag, prior release) and always takes the highest found version as the authoritative one.  So if you want to override the generated version, just manually update the release PR title to be a normal non-semver prerelease and merge.  From then on, versions will not be prerelease incremented.
 
