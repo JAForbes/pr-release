@@ -1,4 +1,10 @@
 
+# Release v0.17.8
+
+### Patch Changes
+
+#### [Better handling of prerelease auto versioning (@JAForbes)](https://github.com/JAForbes/pr-release/pull/244)
+
 # Release v0.17.7
 
 ### Patch Changes
