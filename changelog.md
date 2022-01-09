@@ -1,4 +1,10 @@
 
+# Release v0.17.7
+
+### Patch Changes
+
+#### [Fix crash when there is only one release (@JAForbes)](https://github.com/JAForbes/pr-release/pull/241)
+
 # Release v0.17.6
 
 ### Patch Changes
