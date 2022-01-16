@@ -1,4 +1,15 @@
 
+# Release v0.17.11
+
+### Patch Changes
+
+#### [Allow failures when publishing prerelease (@JAForbes)](https://github.com/JAForbes/pr-release/pull/250)
+
+Maybe that version, or CI job already ran.
+#### [Escape version replacing (@JAForbes)](https://github.com/JAForbes/pr-release/pull/251)
+
+Fixes #248.
+
 # Release v0.17.9
 
 ### Patch Changes
