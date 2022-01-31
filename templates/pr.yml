@@ -28,7 +28,7 @@ jobs:
     - run: npm run build --if-present
     - run: npx pr-release pr --verbose --target $target --source $source --compact --verbose
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 # The following will publish a pre-release to npm
 #    - run: npx pr-release extract-changelog --target $target --source $source --compact --out                       
 #    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./.pr-release/nextVersion) 
