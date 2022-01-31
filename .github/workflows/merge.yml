@@ -32,7 +32,7 @@ jobs:
     - run: npm run build --if-present
     - run: node bin.js merge --target main --source next --commit --force --clean --changelog --compact
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
     # The following will publish the release to npm
     - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc  # prr:comment
@@ -46,6 +46,6 @@ jobs:
       name: Deploy to CF Worker                                           # prr:remove
       env:                                                                # prr:remove
         CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}                             # prr:remove
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                         # prr:remove
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}                         # prr:remove
         CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}                       # prr:remove
         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}                         # prr:remove

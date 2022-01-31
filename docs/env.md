@@ -7,9 +7,16 @@ In order for **pr-release** to perform some operations you'll need to configure 
 
 ```.env
 # Create both these tokens then add them to your github project
-GITHUB_TOKEN=""
+GH_TOKEN=""
 NPM_TOKEN=""
 ```
+
+pr-release automatically ensures that post a merge of a release branch that `main` is an exact copy of `next`.
+
+This way, if changes are applied to the `next` branch, such as versioning, or generating changelogs, they always appear on the branch that
+represents "production".
+
+This requires the ability for pr-release to circumvent normal push rules, so an admin environment variable is required.
 
 ## npm Token
 
