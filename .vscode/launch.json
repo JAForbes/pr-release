@@ -29,16 +29,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "sum-type:pr",
+            "name": "odin:pr",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "cwd": "/home/james/src/harth/sum-type",
+            "cwd": "/home/james/src/harth/odin",
             "env": {
-                "GITHUB_REPOSITORY":"JAForbes/sum-type"
+                "GITHUB_REPOSITORY":"harth-systems/odin"
             },
             "envFile": "${workspaceFolder}/.env",
-            "args": ["pr"],
+            "args": ["pr", "--verbose", "--target", "master", "--source", "staging"],
             "program": "${workspaceFolder}/bin.js"
         },
         {
