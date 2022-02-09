@@ -27,6 +27,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: echo $GITHUB_TOKEN | md5sum
+      env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     - run: node bin.js pr --verbose --target main --source next --compact --verbose
       env:
