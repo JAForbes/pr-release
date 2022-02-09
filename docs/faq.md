@@ -59,6 +59,21 @@ If `GITHUB_SHA` is not specified, `pr-release` will make an API call to identify
 
 `GITHUB_REF` is used to identify if there is already a pull request for the current branch.  This is especially useful for automatically generating feature branches on push.
 
+### Why GH_TOKEN instead of GITHUB_TOKEN?
+
+pr-release automatically ensures that post a merge of a release branch that `main` is an exact copy of `next`.
+
+In git parlance, pr-release guarantees that `main` has the same ref and history as main by ensuring the merge of `next` into `main` is a fast forward.
+
+This way, if changes are applied to the `next` branch, such as versioning, or generating changelogs, they always appear on the branch that represents "production".
+
+This requires the ability for pr-release to circumvent normal push rules, so an admin environment variable is required.
+
+The default `GITHUB_TOKEN` passed in to CI will not have the ability to circumvent push rules, instead an admin personal access token is used.  We use the name `GH_TOKEN` because user defined github secrets cannot be prefixed with `GITHUB_`.
+
+If you are using pr-release outside of github actions then `GITHUB_TOKEN` is the correct environment variable to use.  `GH_TOKEN` is just used in the `.github/workflows/*.yml` config files.  The actual pr-release source code uses `GITHUB_TOKEN` behind the scenes.
+
+
 ### How do I do concurrent release channels?
 
 Have a target branch for each channel e.g. `v1` and a release candidate branch like `v1-next`:

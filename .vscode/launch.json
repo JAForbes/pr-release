@@ -23,6 +23,7 @@
             ],
             "cwd": "/home/james/src/harth/sum-type",
             "args": ["pr"],
+            "envFile": "${workspaceFolder}/.env",
             "program": "${workspaceFolder}/bin.js"
         },
         {
