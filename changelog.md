@@ -1,4 +1,12 @@
 
+# Release v0.17.16
+
+### Patch Changes
+
+#### [Let repairTarget assume admin token (@JAForbes)](https://github.com/JAForbes/pr-release/pull/263)
+
+Fixes #262.
+
 # Release v0.17.11
 
 ### Patch Changes
