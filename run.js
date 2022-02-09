@@ -17,6 +17,7 @@ async function watch(){
 async function deploy(){
     await $`node -r dotenv/config bin.js extract-changelog --out`
     await $`node scripts/build-docs.js`
+    await $`npm install @cloudflare/wrangler -g`
     await $`npx @cloudflare/wrangler publish`
 }
 
