@@ -39,25 +39,40 @@ Note, you must have an `NPM_TOKEN` available in CI.  You can generate an NPM Tok
 
 ### What environment variables do I need to make this work?
 
-If you are running `pr-release` within Github Actions, you do not need to configure environment variables except `GITHUB_TOKEN` (and optionally `NPM_TOKEN`) because we use variables that Github provides out of the box.
+If you are running `pr-release` within Github Actions, you do not need to configure environment variables except `GH_TOKEN` (and optionally `NPM_TOKEN`) because we use variables that Github provides out of the box.
 
 But, if you are running `pr-release` locally or in some other context, you will need to provide the following:
 
 
 ```.env
-GITHUB_TOKEN="..."
+GH_TOKEN="..."
 GITHUB_REPOSITORY="..."
 GITHUB_SHA="..."
 GITHUB_REF="..."
 ```
 
-`GITHUB_TOKEN` is necessary for pr-release to do any of the work it does.  By design `pr-release` never uses `git` to make changes to the repo.  This is so `pr-release` can operate outside of the normal branch protection rules provided by github, and to give you the best possible auditing experience.  We do not use the default token provided by github actions because it will be restricted to branch protection rules.  You will need to generate a token of an admin account on your repository so that pr-release can generate release artifacts on the main protected branch.
+`GH_TOKEN` is necessary for pr-release to do any of the work it does.  By design `pr-release` never uses `git` to make changes to the repo.  This is so `pr-release` can operate outside of the normal branch protection rules provided by github, and to give you the best possible auditing experience.  We do not use the default token provided by github actions because it will be restricted to branch protection rules.  You will need to generate a token of an admin account on your repository so that pr-release can generate release artifacts on the main protected branch.
 
 If `GITHUB_REPOSITORY` is not provided, pr-release will exit.  Even if you are running locally in a `.git` context, we will never sniff the output of `git remote -v`.  By making repository selection explicit, it is possible for forks to to still target the correct repository, or to have management repositories that manage releases across an entire company.
 
 If `GITHUB_SHA` is not specified, `pr-release` will make an API call to identify the relevant sha for the given command.  If the relevant sha is not inferrable, `pr-release` will exit with a non zero code. 
 
 `GITHUB_REF` is used to identify if there is already a pull request for the current branch.  This is especially useful for automatically generating feature branches on push.
+
+### Why GH_TOKEN instead of GITHUB_TOKEN?
+
+pr-release automatically ensures that post a merge of a release branch that `main` is an exact copy of `next`.
+
+In git parlance, pr-release guarantees that `main` has the same ref and history as main by ensuring the merge of `next` into `main` is a fast forward.
+
+This way, if changes are applied to the `next` branch, such as versioning, or generating changelogs, they always appear on the branch that represents "production".
+
+This requires the ability for pr-release to circumvent normal push rules, so an admin environment variable is required.
+
+The default `GITHUB_TOKEN` passed in to CI will not have the ability to circumvent push rules, instead an admin personal access token is used.  We use the name `GH_TOKEN` because user defined github secrets cannot be prefixed with `GITHUB_`.
+
+If you are using pr-release outside of github actions then `GITHUB_TOKEN` is the correct environment variable to use.  `GH_TOKEN` is just used in the `.github/workflows/*.yml` config files.  The actual pr-release source code uses `GITHUB_TOKEN` behind the scenes.
+
 
 ### How do I do concurrent release channels?
 
