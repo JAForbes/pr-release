@@ -1,4 +1,12 @@
 
+# Release v0.17.18
+
+### Patch Changes
+
+#### [Improve change descriptions (@JAForbes)](https://github.com/JAForbes/pr-release/pull/269)
+
+Better handling of headings and lists when summarizing PR descriptions for changelog entries.
+
 # Release v0.17.17
 
 ### Patch Changes
