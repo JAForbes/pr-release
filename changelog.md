@@ -1,4 +1,12 @@
 
+# Release v0.17.17
+
+### Patch Changes
+
+#### [Globally install wrangler in CI (@JAForbes)](https://github.com/JAForbes/pr-release/pull/266)
+
+Got a strange error when publishing the docs.  `npx @cloudflare/wrangler publish` errors out with `You have not installed wrangler`.
+
 # Release v0.17.16
 
 ### Patch Changes
