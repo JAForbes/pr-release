@@ -10,6 +10,13 @@ You'll need to create the following two github secrets to use pr-release:
 - `GH_TOKEN` a personal access token to manage branches, releases etc
 - `NPM_TOKEN` an npm auth token to publish releases, optional
 
+pr-release automatically ensures that post a merge of a release branch that `main` is an exact copy of `next`.
+
+This way, if changes are applied to the `next` branch, such as versioning, or generating changelogs, they always appear on the branch that
+represents "production".
+
+This requires the ability for pr-release to circumvent normal push rules, so an admin environment variable is required.
+
 ## npm Token
 
 How to set up an npm access token for publishing releases and pre-releases.
