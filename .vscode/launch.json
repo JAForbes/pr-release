@@ -44,6 +44,21 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "classies:pr",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/james/src/jaforbes/classies",
+            "env": {
+                "GITHUB_REPOSITORY":"StephanHoyer/classies"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["pr", "--verbose"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "generate-templates",
             "skipFiles": [
                 "<node_internals>/**"
