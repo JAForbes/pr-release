@@ -1,4 +1,12 @@
 
+# Release v0.17.19
+
+### Patch Changes
+
+#### [Reinstate early exit (@JAForbes)](https://github.com/JAForbes/pr-release/pull/272)
+
+Fixes #271.
+
 # Release v0.17.18
 
 ### Patch Changes
