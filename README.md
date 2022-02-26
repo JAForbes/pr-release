@@ -1,9 +1,6 @@
 # pr-release
 
-> 🚨 This repo does nothing right now, I'm just experimenting.  Do not use this.
-
 https://pr-release.org/
-
 
 - No special config file
 - Generates Github Action Templates out of the box
