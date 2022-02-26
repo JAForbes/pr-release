@@ -1,4 +1,10 @@
 
+# Release v0.17.20
+
+### Patch Changes
+
+#### [Remove scary warning message (@JAForbes)](https://github.com/JAForbes/pr-release/pull/279)
+
 # Release v0.17.19
 
 ### Patch Changes
