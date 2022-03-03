@@ -1,4 +1,12 @@
 
+# Release v0.18.0
+
+### Minor Changes
+
+#### [Safely generate prerelease semver id and publish (@JAForbes)](https://github.com/JAForbes/pr-release/pull/283)
+
+Handle a preid already being published.  Handle no existing version of that preid.  Handle the existing version being > than the proposed version.
+
 # Release v0.17.20
 
 ### Patch Changes
