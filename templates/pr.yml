@@ -29,13 +29,10 @@ jobs:
     - run: npx pr-release pr --verbose --target $target --source $source --compact --verbose
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-# The following will publish a pre-release to npm
-#    - run: npx pr-release extract-changelog --target $target --source $source --compact --out                       
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./.pr-release/nextVersion) 
-#    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=$source          
+    # The following will publish a prerelease to npm
 #    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                   
 #      name: Setup NPM Auth                                                                                 
 #      env:                                                                                                 
 #        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                                
-#    - run: npm publish --tag=$source                                                                          
+#    - run: npx pr-release infer-prerelease --preid=$source --verbose --publish                                   
 #      name: Publish                                                                                        
