@@ -29,13 +29,10 @@ jobs:
     - run: node bin.js pr --verbose --target main --source next --compact --verbose
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-# The following will publish a pre-release to npm
-    - run: node bin.js extract-changelog --target main --source next --compact --out                       # prr:comment
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version $(cat ./.pr-release/nextVersion) # prr:comment
-    - run: npm version --no-verify --no-commit-hooks --no-git-tag-version prerelease --preid=next          # prr:comment
+    # The following will publish a prerelease to npm
     - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                   # prr:comment
       name: Setup NPM Auth                                                                                 # prr:comment
       env:                                                                                                 # prr:comment
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                                # prr:comment
-    - run: npm publish --tag=next                                                                          # prr:comment
+    - run: node bin.js infer-prerelease --preid=next --verbose --publish                                   # prr:comment
       name: Publish                                                                                        # prr:comment
