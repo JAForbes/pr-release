@@ -1,4 +1,12 @@
 
+# Release v0.18.1
+
+### Patch Changes
+
+#### [Better handling of html comments (@JAForbes)](https://github.com/JAForbes/pr-release/pull/286)
+
+And GH Flavoured MD todos.  Fixes #286.
+
 # Release v0.18.0
 
 ### Minor Changes
