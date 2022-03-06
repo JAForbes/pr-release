@@ -1,4 +1,12 @@
 
+# Release v0.18.2
+
+### Patch Changes
+
+#### [Strip headers and todos from change descriptions (@JAForbes)](https://github.com/JAForbes/pr-release/pull/290)
+
+Fixes #289.
+
 # Release v0.18.1
 
 ### Patch Changes
