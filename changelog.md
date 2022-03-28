@@ -1,4 +1,10 @@
 
+# Release v0.18.3
+
+### Patch Changes
+
+#### [Fix customizable --changelog output (@JAForbes)](https://github.com/JAForbes/pr-release/pull/295)
+
 # Release v0.18.2
 
 ### Patch Changes
