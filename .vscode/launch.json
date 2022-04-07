@@ -139,8 +139,9 @@
             ],
             "env": {
                 "GITHUB_REPOSITORY":"harth-systems/mithril.js",
-                "cwd": "/home/james/src/harth/mithril.js",
             },
+            "cwd": "/home/james/src/harth/mithril.js",
+            "envFile": "${workspaceFolder}/.env",
             "args": ["rollback", "--target", "main", "--source", "next", "--verbose", "--ignore", "package*", "--ignore", "changelog.md"],
             "program": "${workspaceFolder}/bin.js"
         },
