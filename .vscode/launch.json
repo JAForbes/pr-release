@@ -133,6 +133,20 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "rollback:harth-mithril",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "env": {
+                "GITHUB_REPOSITORY":"harth-systems/mithril.js",
+                "cwd": "/home/james/src/harth/mithril.js",
+            },
+            "args": ["rollback", "--target", "main", "--source", "next", "--verbose", "--ignore", "package*", "--ignore", "changelog.md"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "featurePR",
             "skipFiles": [
                 "<node_internals>/**"

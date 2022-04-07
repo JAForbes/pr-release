@@ -6,7 +6,7 @@ on:
 concurrency: prr:deploy
 
 jobs:
-  pr:
+  rollback:
 
     runs-on: ubuntu-latest
 
