@@ -1,4 +1,13 @@
 
+# Release v0.18.4
+
+### Patch Changes
+
+#### [Remove unnecessary (and incorrect) replace (@JAForbes)](https://github.com/JAForbes/pr-release/pull/303)
+
+
+#### [Fix spread bug leading to vnull (@JAForbes)](https://github.com/JAForbes/pr-release/pull/300)
+
 # Release v0.18.3
 
 ### Patch Changes
