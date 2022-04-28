@@ -59,6 +59,21 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "mithril-prod:pr",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/james/src/MithrilJS/mithril.js",
+            "env": {
+                "GITHUB_REPOSITORY":"MithrilJS/mithril.js"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["pr", "--verbose", "--target", "master", "--source", "next", "--compact", "--verbose"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "generate-templates",
             "skipFiles": [
                 "<node_internals>/**"
