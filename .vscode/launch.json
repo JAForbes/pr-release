@@ -114,6 +114,16 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "merge",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": ["merge", "--target", "main", "--source", "next", "--verbose", "--force", "--clean", "--changelog", "--compact"],
+            "program": "${workspaceFolder}/bin.js"
+        }
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "merge --commit",
             "skipFiles": [
                 "<node_internals>/**"
