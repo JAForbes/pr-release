@@ -3,6 +3,12 @@
 
 ### Patch Changes
 
+#### [Use nextVersion not inferred version for publish (@JAForbes)](https://github.com/JAForbes/pr-release/pull/318)
+
+# Release v0.18.7
+
+### Patch Changes
+
 #### [Fix version number inference (@JAForbes)](https://github.com/JAForbes/pr-release/pull/314)
 
 # Release v0.18.4
