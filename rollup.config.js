@@ -9,7 +9,7 @@ export default {
         resolve(),
         common(),
     ]
-    ,external: ['zx', 'octokit']
+    ,external: ['zx', 'octokit', 'canvas']
     ,output: {
         file: './dist/pr-release.cjs'
         ,format: 'cjs'
