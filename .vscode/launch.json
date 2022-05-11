@@ -74,6 +74,21 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "test-repo:pr",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/james/src/jaforbes/pr-release-test-repo-2",
+            "env": {
+                "GITHUB_REPOSITORY":"JAForbes/pr-release-test-repo-2"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["pr", "--verbose", "--target", "main", "--source", "next", "--compact", "--verbose"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "generate-templates",
             "skipFiles": [
                 "<node_internals>/**"
