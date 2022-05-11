@@ -1,4 +1,18 @@
 
+# Release v0.18.12
+
+### Patch Changes
+
+#### [Handle unpublished package in prerelease fn (@JAForbes)](https://github.com/JAForbes/pr-release/pull/329)
+
+
+#### [Fix non updating release title (@JAForbes)](https://github.com/JAForbes/pr-release/pull/328)
+
+
+#### [Handle merge case where no prior release PR exists, but commit history exists (@JAForbes)](https://github.com/JAForbes/pr-release/pull/324)
+
+Fixes #323.  I've reworked the code to be a bit less temporal.
+
 # Release v0.18.9
 
 ### Patch Changes
