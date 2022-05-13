@@ -21,7 +21,7 @@ The semver increment level defaults to `patch` but can be set to `major`, `minor
 
 By default pr-release tries to capture the full scope/risk of a release by including every patch/minor/major increment.  This is especially useful for versioning applications and gauging the scope/risk of a release at a glance.
 
-For libraries you may want to use the `--minimize-semver-changes` option which makes the minimum necessary change to the semver to still satisfy semver range comparisons.
+For libraries you may want to use the `--minimize-semver-change` option which makes the minimum necessary change to the semver to still satisfy semver range comparisons.
 
 For example, if the previous version was `2.0.4` and the release candidate has 6 patches, 3 minors and 0 majors.  The next version would be calculated as `2.1.0` as there was at least 1 minor.  1 minor constitutes a minor version update and no other version information is required, that is why the patch section is zeroed out.  Additionally a minor jump from `2.1.0` or `2.6.0` is still a minor update, so it is not necessary to include the amount of minor jumps.
 
