@@ -1,4 +1,12 @@
 
+# Release v0.18.15
+
+### Patch Changes
+
+#### [Debug minimize semver change (@JAForbes)](https://github.com/JAForbes/pr-release/pull/338)
+
+Add some verbose logs to help analyze minimize semver change behaviour in the wild.
+
 # Release v0.18.14
 
 ### Patch Changes
