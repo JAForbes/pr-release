@@ -1,4 +1,10 @@
 
+# Release v0.18.14
+
+### Patch Changes
+
+#### [Fix typo in minimize-semver-change (@JAForbes)](https://github.com/JAForbes/pr-release/pull/336)
+
 # Release v0.18.13
 
 ### Patch Changes
