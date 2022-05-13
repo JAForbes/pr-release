@@ -1,4 +1,10 @@
 
+# Release v0.18.16
+
+### Patch Changes
+
+#### [Fix incorrect argv mapping (@JAForbes)](https://github.com/JAForbes/pr-release/pull/340)
+
 # Release v0.18.15
 
 ### Patch Changes
