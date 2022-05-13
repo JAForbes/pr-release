@@ -17,6 +17,16 @@ The semver increment level defaults to `patch` but can be set to `major`, `minor
 
 **pr-release** infers the current version by checking multiple sources (package.json, release PR header, git tag, prior release) and always takes the highest found version as the authoritative one.  So if you want to override the generated version, just manually update the release PR title to be a normal non-semver prerelease and merge.  From then on, versions will not be prerelease incremented.
 
+### The auto generated versions looks weird...
+
+By default pr-release tries to capture the full scope/risk of a release by including every patch/minor/major increment.  This is especially useful for versioning applications and gauging the scope/risk of a release at a glance.
+
+For libraries you may want to use the `--minimize-semver-changes` option which makes the minimum necessary change to the semver to still satisfy semver range comparisons.
+
+For example, if the previous version was `2.0.4` and the release candidate has 6 patches, 3 minors and 0 majors.  The next version would be calculated as `2.1.0` as there was at least 1 minor.  1 minor constitutes a minor version update and no other version information is required, that is why the patch section is zeroed out.  Additionally a minor jump from `2.1.0` or `2.6.0` is still a minor update, so it is not necessary to include the amount of minor jumps.
+
+With the default settings the version would be calculated as `2.6.7` as it is a simple addition of semver increment levels to the base version.
+
 ### How do I configure my Github actions to use `pr-release`?
 
 Run `npx pr-release actions-yml`.  It will generate all the yml files you need to use all the features of `pr-release`.
