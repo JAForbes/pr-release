@@ -1,4 +1,12 @@
 
+# Release v0.18.17
+
+### Patch Changes
+
+#### [Thread options value through multiple calls (@JAForbes)](https://github.com/JAForbes/pr-release/pull/342)
+
+Fixes minimize-semver-change not working for `merge`.
+
 # Release v0.18.16
 
 ### Patch Changes
