@@ -1,4 +1,12 @@
 
+# Release v0.18.13
+
+### Patch Changes
+
+#### [Minimize semver logic + tests (@JAForbes)](https://github.com/JAForbes/pr-release/pull/331)
+
+Fixes #330.
+
 # Release v0.18.12
 
 ### Patch Changes
