@@ -204,6 +204,16 @@
             ],
             "args": ["actions-yml"],
             "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "test",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "args": [],
+            "program": "${workspaceFolder}/test/test.js"
         }
     ]
 }
