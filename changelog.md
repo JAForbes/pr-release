@@ -1,4 +1,12 @@
 
+# Release v0.18.18
+
+### Patch Changes
+
+#### [Fix a typo (@pygy)](https://github.com/JAForbes/pr-release/pull/344)
+
+> *pr-release guarantees that `main` has the same ref and history as ~~main~~`next`*.
+
 # Release v0.18.17
 
 ### Patch Changes
