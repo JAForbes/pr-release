@@ -73,7 +73,7 @@ If `GITHUB_SHA` is not specified, `pr-release` will make an API call to identify
 
 pr-release automatically ensures that post a merge of a release branch that `main` is an exact copy of `next`.
 
-In git parlance, pr-release guarantees that `main` has the same ref and history as main by ensuring the merge of `next` into `main` is a fast forward.
+In git parlance, pr-release guarantees that `main` has the same ref and history as `next` by ensuring the merge of `next` into `main` is a fast forward.
 
 This way, if changes are applied to the `next` branch, such as versioning, or generating changelogs, they always appear on the branch that represents "production".
 
