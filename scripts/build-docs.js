@@ -7,6 +7,14 @@ import * as linkedom from 'linkedom'
 import fm from 'front-matter'
 import sanitizeHTML from 'sanitize-html'
 
+marked.use({
+    renderer: {
+        heading(text, level, _, slugger) {
+            const slug = slugger.slug(text)
+            return `<h${level} id="${slug}"><a name="${slug}" href="#${slug}">text</a></h${level}>`
+        }
+    }
+})
 
 async function main(){
 
@@ -131,7 +139,7 @@ async function main(){
 
         
     })
-    xs = Promise.all(xs)
+    xs = await Promise.all(xs)
     await $`cp -r ./scripts/assets ./web-dist/`
 }
 
