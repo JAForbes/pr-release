@@ -11,7 +11,7 @@ marked.use({
     renderer: {
         heading(text, level, _, slugger) {
             const slug = slugger.slug(text)
-            return `<h${level} id="${slug}"><a name="${slug}" href="#${slug}">text</a></h${level}>`
+            return `<h${level} id="${slug}"><a name="${slug}" href="#${slug}">${text}</a></h${level}>`
         }
     }
 })
