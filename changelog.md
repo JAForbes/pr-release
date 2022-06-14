@@ -1,4 +1,10 @@
 
+# Release v0.18.19
+
+### Patch Changes
+
+#### [Linkify docs headers (fix #335) (@pygy)](https://github.com/JAForbes/pr-release/pull/351)
+
 # Release v0.18.18
 
 ### Patch Changes
