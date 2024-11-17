@@ -21,9 +21,9 @@ const markers = {
 	},
 }
 
-type Action =
-	| 'get-argv'
-	| 'get-repository-name'
+export type Action =
+	| { tag: 'get-argv'}
+	| { tag: 'get-repository-name'}
 	| { tag: 'get-package-json'; value: { owner: string; repo: string } }
 	| {
 		tag: 'get-latest-git-tag-version'
@@ -97,7 +97,7 @@ type ArgV = {
 
 type Package = { version: string }
 type Label = { name: string }
-type BranchInfo = { labels: Label[] }
+export type BranchInfo = { labels: Label[] }
 type PullInfo = {
 	title: string
 	body?: string
@@ -105,7 +105,7 @@ type PullInfo = {
 	number: number
 	labels: Label[]
 }
-type DiffInfo = {
+export type DiffInfo = {
 	data: {
 		status: 'ahead' | 'behind' | 'diverged' | 'identical'
 		files: DiffFileInfo[]
@@ -136,7 +136,7 @@ function escapeRegExp(text: string) {
 }
 
 function* getArgv(): Generator<Action, ArgV> {
-	const out: ArgV = yield 'get-argv'
+	const out: ArgV = yield { tag: 'get-argv' }
 	return out
 }
 
@@ -319,7 +319,7 @@ function getNextVersion(
 }
 
 function* getRepositoryName(): Generator<Action, string> {
-	const name: string = yield 'get-repository-name'
+	const name: string = yield { tag: 'get-repository-name'}
 	return name
 }
 
@@ -427,7 +427,7 @@ function changeDescription(
 		.join('\n')
 }
 
-function* pr() {
+export function* pr() {
 	const [owner, repo] = yield* getRepositoryName()
 	const options = yield* getArgv()
 
@@ -474,7 +474,7 @@ function* pr() {
 			)
 		}
 
-		verbose('diff', diff)
+		yield * verbose('diff', diff)
 		if (diff.data.status == 'behind' || diff.data.status == 'diverged') {
 			break checkDiff
 		} else if (
