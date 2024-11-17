@@ -1,0 +1,55 @@
+{
+	"name": "pr-release",
+	"version": "0.18.19",
+	"description": "Generate releases from pull request descriptions.",
+	"main": "dist/pr-release.cjs",
+	"module": "lib/index.js",
+	"type": "module",
+	"scripts": {
+		"build": "rollup -c",
+		"prepare": "husky install",
+		"test": "tape test/*.js"
+	},
+	"bin": "bin.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JAForbes/pr-release.git"
+	},
+	"keywords": [
+		"release",
+		"automation",
+		"github"
+	],
+	"files": [
+		"lib/*",
+		"dist/*",
+		"templates/*"
+	],
+	"author": "JAForbes",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/JAForbes/pr-release/issues"
+	},
+	"homepage": "https://github.com/JAForbes/pr-release#readme",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^20.0.0",
+		"@rollup/plugin-json": "^4.1.0",
+		"@rollup/plugin-node-resolve": "^13.0.4",
+		"eslint": "^7.32.0",
+		"front-matter": "^4.0.2",
+		"husky": "^7.0.4",
+		"marked": "^4.0.3",
+		"rollup": "^2.56.3",
+		"sanitize-html": "^2.6.1",
+		"tape": "^5.5.3"
+	},
+	"dependencies": {
+		"linkedom": "^0.10.3",
+		"@octokit/plugin-throttling": "^3.5.2",
+		"canvas": "^2.9.1",
+		"dotenv": "^10.0.0",
+		"octokit": "^1.5.0",
+		"semver": "^7.6.3",
+		"zx": "^8.2.2"
+	}
+}

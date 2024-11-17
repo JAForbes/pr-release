@@ -3,15 +3,15 @@ import common from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
 
 export default {
-    input: './lib/index.js'
-    ,plugins: [
-        json(),
-        resolve(),
-        common(),
-    ]
-    ,external: ['zx', 'octokit', 'canvas']
-    ,output: {
-        file: './dist/pr-release.cjs'
-        ,format: 'cjs'
-    }
+	input: './lib/index.js',
+	plugins: [
+		json(),
+		resolve(),
+		common(),
+	],
+	external: ['zx', 'octokit', 'canvas'],
+	output: {
+		file: './dist/pr-release.cjs',
+		format: 'cjs',
+	},
 }

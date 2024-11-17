@@ -1,219 +1,294 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "repair-target",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["repair-target", "--force"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "pr",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "cwd": "/home/james/src/harth/sum-type",
-            "args": ["pr"],
-            "envFile": "${workspaceFolder}/.env",
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "odin:pr",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "cwd": "/home/james/src/harth/odin",
-            "env": {
-                "GITHUB_REPOSITORY":"harth-systems/odin"
-            },
-            "envFile": "${workspaceFolder}/.env",
-            "args": ["pr", "--verbose", "--target", "master", "--source", "staging"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "classies:pr",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "cwd": "/home/james/src/jaforbes/classies",
-            "env": {
-                "GITHUB_REPOSITORY":"StephanHoyer/classies"
-            },
-            "envFile": "${workspaceFolder}/.env",
-            "args": ["pr", "--verbose"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "mithril-prod:pr",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "cwd": "/home/james/src/MithrilJS/mithril.js",
-            "env": {
-                "GITHUB_REPOSITORY":"MithrilJS/mithril.js"
-            },
-            "envFile": "${workspaceFolder}/.env",
-            "args": ["pr", "--verbose", "--target", "master", "--source", "next", "--compact", "--verbose"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "test-repo:pr",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "cwd": "/home/james/src/jaforbes/pr-release-test-repo-2",
-            "env": {
-                "GITHUB_REPOSITORY":"JAForbes/pr-release-test-repo-2"
-            },
-            "envFile": "${workspaceFolder}/.env",
-            "args": ["pr", "--verbose", "--target", "main", "--source", "next", "--compact", "--verbose"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "generate-templates",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["generate-templates"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "update-docs",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["update-docs"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "changelog",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["changelog", "--out"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "extract-changelog",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["extract-changelog", "--out"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "merge",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["merge", "--target", "main", "--source", "next", "--verbose", "--force", "--clean", "--changelog", "--compact"],
-            "program": "${workspaceFolder}/bin.js"
-        }
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "merge --commit",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["merge", "--commit", "--target", "main", "--source", "next", "--verbose", "--force", "--clean", "--changelog", "--compact"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "sum-type:merge --commit",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "env": {
-                "GITHUB_REPOSITORY":"JAForbes/sum-type"
-            },
-            "envFile": "${workspaceFolder}/.env",
-            "args": ["merge", "--commit", "--target", "main", "--source", "next", "--verbose", "--force", "--clean", "--changelog", "--compact"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "rollback",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["rollback", "--target", "main", "--source", "next", "--verbose", "--ignore", "package*", "--ignore", "changelog.md"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "rollback:harth-mithril",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "env": {
-                "GITHUB_REPOSITORY":"harth-systems/mithril.js",
-            },
-            "cwd": "/home/james/src/harth/mithril.js",
-            "envFile": "${workspaceFolder}/.env",
-            "args": ["rollback", "--target", "main", "--source", "next", "--verbose", "--ignore", "package*", "--ignore", "changelog.md"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "featurePR",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["feature-pr"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "actions-yml",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": ["actions-yml"],
-            "program": "${workspaceFolder}/bin.js"
-        },
-        {
-            "type": "pwa-node",
-            "request": "launch",
-            "name": "test",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "args": [],
-            "program": "${workspaceFolder}/test/test.js"
-        }
-    ]
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "repair-target",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["repair-target", "--force"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "pr",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "/home/james/src/harth/sum-type",
+			"args": ["pr"],
+			"envFile": "${workspaceFolder}/.env",
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "odin:pr",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "/home/james/src/harth/odin",
+			"env": {
+				"GITHUB_REPOSITORY": "harth-systems/odin"
+			},
+			"envFile": "${workspaceFolder}/.env",
+			"args": ["pr", "--verbose", "--target", "master", "--source", "staging"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "classies:pr",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "/home/james/src/jaforbes/classies",
+			"env": {
+				"GITHUB_REPOSITORY": "StephanHoyer/classies"
+			},
+			"envFile": "${workspaceFolder}/.env",
+			"args": ["pr", "--verbose"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "mithril-prod:pr",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "/home/james/src/MithrilJS/mithril.js",
+			"env": {
+				"GITHUB_REPOSITORY": "MithrilJS/mithril.js"
+			},
+			"envFile": "${workspaceFolder}/.env",
+			"args": [
+				"pr",
+				"--verbose",
+				"--target",
+				"master",
+				"--source",
+				"next",
+				"--compact",
+				"--verbose"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "test-repo:pr",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"cwd": "/home/james/src/jaforbes/pr-release-test-repo-2",
+			"env": {
+				"GITHUB_REPOSITORY": "JAForbes/pr-release-test-repo-2"
+			},
+			"envFile": "${workspaceFolder}/.env",
+			"args": [
+				"pr",
+				"--verbose",
+				"--target",
+				"main",
+				"--source",
+				"next",
+				"--compact",
+				"--verbose"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "generate-templates",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["generate-templates"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "update-docs",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["update-docs"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "changelog",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["changelog", "--out"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "extract-changelog",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["extract-changelog", "--out"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "merge",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": [
+				"merge",
+				"--target",
+				"main",
+				"--source",
+				"next",
+				"--verbose",
+				"--force",
+				"--clean",
+				"--changelog",
+				"--compact"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "merge --commit",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": [
+				"merge",
+				"--commit",
+				"--target",
+				"main",
+				"--source",
+				"next",
+				"--verbose",
+				"--force",
+				"--clean",
+				"--changelog",
+				"--compact"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "sum-type:merge --commit",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"env": {
+				"GITHUB_REPOSITORY": "JAForbes/sum-type"
+			},
+			"envFile": "${workspaceFolder}/.env",
+			"args": [
+				"merge",
+				"--commit",
+				"--target",
+				"main",
+				"--source",
+				"next",
+				"--verbose",
+				"--force",
+				"--clean",
+				"--changelog",
+				"--compact"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "rollback",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": [
+				"rollback",
+				"--target",
+				"main",
+				"--source",
+				"next",
+				"--verbose",
+				"--ignore",
+				"package*",
+				"--ignore",
+				"changelog.md"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "rollback:harth-mithril",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"env": {
+				"GITHUB_REPOSITORY": "harth-systems/mithril.js"
+			},
+			"cwd": "/home/james/src/harth/mithril.js",
+			"envFile": "${workspaceFolder}/.env",
+			"args": [
+				"rollback",
+				"--target",
+				"main",
+				"--source",
+				"next",
+				"--verbose",
+				"--ignore",
+				"package*",
+				"--ignore",
+				"changelog.md"
+			],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "featurePR",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["feature-pr"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "actions-yml",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": ["actions-yml"],
+			"program": "${workspaceFolder}/bin.js"
+		},
+		{
+			"type": "pwa-node",
+			"request": "launch",
+			"name": "test",
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"args": [],
+			"program": "${workspaceFolder}/test/test.js"
+		}
+	]
 }

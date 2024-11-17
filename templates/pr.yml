@@ -2,7 +2,7 @@ name: pr
 
 on:
   push:
-    branches: [ $source ]
+    branches: [$source]
 
   workflow_dispatch:
 
@@ -10,7 +10,6 @@ concurrency: prr:pre-release
 
 jobs:
   pr:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -18,21 +17,21 @@ jobs:
         node-version: [16.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npx pr-release pr --verbose --target $target --source $source --compact --verbose
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-    # The following will publish a prerelease to npm
-#    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc                                   
-#      name: Setup NPM Auth                                                                                 
-#      env:                                                                                                 
-#        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}                                                                
-#    - run: npx pr-release infer-prerelease --preid=$source --verbose --publish                                   
-#      name: Publish                                                                                        
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npx pr-release pr --verbose --target $target --source $source --compact --verbose
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      # The following will publish a prerelease to npm
+#    - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+#      name: Setup NPM Auth
+#      env:
+#        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+#    - run: npx pr-release infer-prerelease --preid=$source --verbose --publish
+#      name: Publish

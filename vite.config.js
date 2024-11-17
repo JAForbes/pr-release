@@ -1,9 +1,9 @@
 export default {
-	plugins: []
-	,server: {
+	plugins: [],
+	server: {
 		watch: {
-			usePolling: true
-		}
-	}
-	,root: './web-dist'
+			usePolling: true,
+		},
+	},
+	root: './web-dist',
 }

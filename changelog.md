@@ -1,4 +1,3 @@
-
 # Release v0.18.19
 
 ### Patch Changes
@@ -11,7 +10,8 @@
 
 #### [Fix a typo (@pygy)](https://github.com/JAForbes/pr-release/pull/344)
 
-> *pr-release guarantees that `main` has the same ref and history as ~~main~~`next`*.
+> _pr-release guarantees that `main` has the same ref and history as ~~main~~
+> `next`_.
 
 # Release v0.18.17
 
@@ -33,7 +33,8 @@ Fixes minimize-semver-change not working for `merge`.
 
 #### [Debug minimize semver change (@JAForbes)](https://github.com/JAForbes/pr-release/pull/338)
 
-Add some verbose logs to help analyze minimize semver change behaviour in the wild.
+Add some verbose logs to help analyze minimize semver change behaviour in the
+wild.
 
 # Release v0.18.14
 
@@ -55,13 +56,11 @@ Fixes #330.
 
 #### [Handle unpublished package in prerelease fn (@JAForbes)](https://github.com/JAForbes/pr-release/pull/329)
 
-
 #### [Fix non updating release title (@JAForbes)](https://github.com/JAForbes/pr-release/pull/328)
-
 
 #### [Handle merge case where no prior release PR exists, but commit history exists (@JAForbes)](https://github.com/JAForbes/pr-release/pull/324)
 
-Fixes #323.  I've reworked the code to be a bit less temporal.
+Fixes #323. I've reworked the code to be a bit less temporal.
 
 # Release v0.18.9
 
@@ -87,7 +86,6 @@ Fixes #323.  I've reworked the code to be a bit less temporal.
 
 #### [Remove unnecessary (and incorrect) replace (@JAForbes)](https://github.com/JAForbes/pr-release/pull/303)
 
-
 #### [Fix spread bug leading to vnull (@JAForbes)](https://github.com/JAForbes/pr-release/pull/300)
 
 # Release v0.18.3
@@ -110,7 +108,7 @@ Fixes #289.
 
 #### [Better handling of html comments (@JAForbes)](https://github.com/JAForbes/pr-release/pull/286)
 
-And GH Flavoured MD todos.  Fixes #286.
+And GH Flavoured MD todos. Fixes #286.
 
 # Release v0.18.0
 
@@ -118,7 +116,8 @@ And GH Flavoured MD todos.  Fixes #286.
 
 #### [Safely generate prerelease semver id and publish (@JAForbes)](https://github.com/JAForbes/pr-release/pull/283)
 
-Handle a preid already being published.  Handle no existing version of that preid.  Handle the existing version being > than the proposed version.
+Handle a preid already being published. Handle no existing version of that
+preid. Handle the existing version being > than the proposed version.
 
 # Release v0.17.20
 
@@ -146,7 +145,8 @@ Fixes #271.
 
 #### [Improve change descriptions (@JAForbes)](https://github.com/JAForbes/pr-release/pull/269)
 
-Better handling of headings and lists when summarizing PR descriptions for changelog entries.
+Better handling of headings and lists when summarizing PR descriptions for
+changelog entries.
 
 # Release v0.17.17
 
@@ -154,7 +154,8 @@ Better handling of headings and lists when summarizing PR descriptions for chang
 
 #### [Globally install wrangler in CI (@JAForbes)](https://github.com/JAForbes/pr-release/pull/266)
 
-Got a strange error when publishing the docs.  `npx @cloudflare/wrangler publish` errors out with `You have not installed wrangler`.
+Got a strange error when publishing the docs. `npx @cloudflare/wrangler publish`
+errors out with `You have not installed wrangler`.
 
 # Release v0.17.16
 
@@ -171,6 +172,7 @@ Fixes #262.
 #### [Allow failures when publishing prerelease (@JAForbes)](https://github.com/JAForbes/pr-release/pull/250)
 
 Maybe that version, or CI job already ran.
+
 #### [Escape version replacing (@JAForbes)](https://github.com/JAForbes/pr-release/pull/251)
 
 Fixes #248.
@@ -209,7 +211,8 @@ Handle another case where a prior release is assumed to exist.
 
 #### [Handle the case where there is no prior release (@JAForbes)](https://github.com/JAForbes/pr-release/pull/237)
 
-When identifying which branches belong to a release, we construct a github search query which finds branches dated after the previous release.
+When identifying which branches belong to a release, we construct a github
+search query which finds branches dated after the previous release.
 
 # Release v0.17.4
 
@@ -231,7 +234,8 @@ Fixes #231.
 
 #### [Remove unused feature from docs (@JAForbes)](https://github.com/JAForbes/pr-release/pull/229)
 
-The auto feature PR generation has a flaw that it would need an auth token for every contributor.  So it has been removed.
+The auto feature PR generation has a flaw that it would need an auth token for
+every contributor. So it has been removed.
 
 # Release v0.17.1
 
@@ -255,12 +259,9 @@ Fixes #194.
 
 #### [Publish a pre-release on every push to next (@JAForbes)](https://github.com/JAForbes/pr-release/pull/203)
 
-
-   
 ### Patch Changes
 
 #### [Fix publish auth (@JAForbes)](https://github.com/JAForbes/pr-release/pull/204)
-
 
 #### [Fix bash vars not portable across run lines (@JAForbes)](https://github.com/JAForbes/pr-release/pull/200)
 
@@ -292,7 +293,6 @@ Ensure our docs stay in sync with the CLI help.
 
 #### [Use compact option in pr yml (@JAForbes)](https://github.com/JAForbes/pr-release/pull/182)
 
-
 #### [Use the new --changelog flag in merge command (@JAForbes)](https://github.com/JAForbes/pr-release/pull/180)
 
 # Release v0.9.0
@@ -306,13 +306,15 @@ Thank you to the following contributors for helping make **pr-release** better:
 #### [Skip changelog generation when content is empty (@JAForbes)](https://github.com/JAForbes/pr-release/pull/174)
 
 Fixes #149.
+
 # Release v0.8.14
 
 ### Patches
 
 #### [Increment semver when committing directly to next (@JAForbes)](https://github.com/JAForbes/pr-release/pull/168)
 
-Previously, if you edited some markdown files and committed directly to next, the auto generated release PR would have the same semver version as main.
+Previously, if you edited some markdown files and committed directly to next,
+the auto generated release PR would have the same semver version as main.
 
 # Release v0.8.10
 
@@ -326,7 +328,9 @@ Previously, if you edited some markdown files and committed directly to next, th
 
 #### [Rollbacks (@JAForbes)](https://github.com/JAForbes/pr-release/pull/130)
 
-Safe, simple rollbacks.  Click a button and your main and next branch will automatically fast forward to a commit that reverts changes from a prior release.
+Safe, simple rollbacks. Click a button and your main and next branch will
+automatically fast forward to a commit that reverts changes from a prior
+release.
 
 # Release v0.5.3
 
@@ -354,7 +358,8 @@ No minor changes in this release.
 
 #### [Automatically create feature branch PR (@JAForbes)](https://github.com/JAForbes/pr-release/pull/91)
 
-Encourage developers to open draft pull requests as early as possible by automatically creating a draft pull request on push.
+Encourage developers to open draft pull requests as early as possible by
+automatically creating a draft pull request on push.
 
 ### Patches
 
@@ -376,4 +381,5 @@ Was causing feature PR creation to run on main/next.
 
 #### [Include untracked files in release commit (@JAForbes)](https://github.com/JAForbes/pr-release/pull/71)
 
-Changelog et al weren't included because `git diff --name-only` doesn't include untracked files.
+Changelog et al weren't included because `git diff --name-only` doesn't include
+untracked files.
