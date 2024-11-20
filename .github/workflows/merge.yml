@@ -38,10 +38,3 @@ jobs:
     - run: node bin.js merge --target main --source next --commit --force --clean --changelog --compact --prerelease="npm publish"
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-    - run: node run.js deploy                                             # prr:remove
-      name: Deploy to CF Worker                                           # prr:remove
-      env:                                                                # prr:remove
-        CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}                             # prr:remove
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}                         # prr:remove
-        CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}                       # prr:remove
-        CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}                         # prr:remove
