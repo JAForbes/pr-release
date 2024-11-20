@@ -78,12 +78,27 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "cwd": "/home/james/src/jaforbes/pr-release-test-repo-2",
+            "cwd": "/home/self/src/@/pr-release-test-repo-3",
             "env": {
-                "GITHUB_REPOSITORY":"JAForbes/pr-release-test-repo-2"
+                "GITHUB_REPOSITORY":"JAForbes/pr-release-test-repo-3"
             },
             "envFile": "${workspaceFolder}/.env",
             "args": ["pr", "--verbose", "--target", "main", "--source", "next", "--compact", "--verbose"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "test-repo:merge",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/self/src/@/pr-release-test-repo-3",
+            "env": {
+                "GITHUB_REPOSITORY":"JAForbes/pr-release-test-repo-3"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["merge", "--verbose", "--target", "main", "--source", "next", "--compact", "--verbose", "--commit", "--force", "--clean", "--changelog", "--prerelease=echo npm publish"],
             "program": "${workspaceFolder}/bin.js"
         },
         {
