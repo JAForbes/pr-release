@@ -1,4 +1,10 @@
 
+# Release v0.18.23
+
+### Patch Changes
+
+#### [Make prerelease hook fail fast (@JAForbes)](https://github.com/JAForbes/pr-release/pull/367)
+
 # Release v0.18.22
 
 ### Patch Changes
