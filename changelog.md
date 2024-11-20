@@ -1,4 +1,12 @@
 
+# Release v0.18.22
+
+### Patch Changes
+
+#### [Temporarily remove deploy (@JAForbes)](https://github.com/JAForbes/pr-release/pull/365)
+
+Wrangler version is outdated and planning to give the docs site a splash of paint anyway.
+
 # Release v0.18.21
 
 ### Patch Changes
