@@ -1,4 +1,12 @@
 
+# Release v0.18.21
+
+### Patch Changes
+
+#### [Add (undocumented) prerelease hooks (@JAForbes)](https://github.com/JAForbes/pr-release/pull/363)
+
+An experimental feature that may be removed.
+
 # Release v0.18.19
 
 ### Patch Changes
