@@ -1,4 +1,10 @@
 
+# Release v0.18.25
+
+### Patch Changes
+
+#### [Document the additional permission checks (@JAForbes)](https://github.com/JAForbes/pr-release/pull/371)
+
 # Release v0.18.24
 
 ### Patch Changes
