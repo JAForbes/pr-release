@@ -1,4 +1,12 @@
 
+# Release v0.18.24
+
+### Patch Changes
+
+#### [Add additional permissions checks (@JAForbes)](https://github.com/JAForbes/pr-release/pull/369)
+
+Add create a draft release and finalize it after hooks.
+
 # Release v0.18.23
 
 ### Patch Changes
