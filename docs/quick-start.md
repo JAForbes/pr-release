@@ -21,3 +21,7 @@ description: Use Pull Requests to generate npm + github releases and changelogs
 9. Create a PR for the feature branch, then merge that PR into `next`
 10. A release PR should automatically generate
 11. You now have an automated release pipeline
+
+## Additional checks
+
+`pr-release` also checks that your token has sufficient permissions before attempting the `pr` or `merge` jobs.  If not it exits early with a helpful error message.
