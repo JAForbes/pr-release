@@ -104,6 +104,36 @@
         {
             "type": "pwa-node",
             "request": "launch",
+            "name": "non-owner:pr",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/self/src/@/pr-release-test-repo-4",
+            "env": {
+                "GITHUB_REPOSITORY":"johnforbes/pr-release-test-repo-4"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["pr", "--verbose", "--target", "main", "--source", "next", "--compact", "--verbose"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "non-owner:merge",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "cwd": "/home/self/src/@/pr-release-test-repo-4",
+            "env": {
+                "GITHUB_REPOSITORY":"johnforbes/pr-release-test-repo-4"
+            },
+            "envFile": "${workspaceFolder}/.env",
+            "args": ["merge", "--verbose", "--target", "main", "--source", "next", "--compact", "--verbose", "--commit", "--force", "--clean", "--changelog", "--prerelease=echo npm publish"],
+            "program": "${workspaceFolder}/bin.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
             "name": "generate-templates",
             "skipFiles": [
                 "<node_internals>/**"
